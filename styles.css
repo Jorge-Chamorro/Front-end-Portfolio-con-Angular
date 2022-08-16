@@ -1,4 +1,9 @@
 
+
+body {
+    background-color: rgba(161, 166, 167, 0.219);
+}
+
 .titulo {
     text-align: center;
     color: darkgrey;
@@ -17,7 +22,7 @@
     border-radius: 2%;
     margin-left: 1em;
     position:relative;
-    
+    text-decoration: dashed;
 
 }
 
@@ -37,8 +42,9 @@
     font-size:medium;
     list-style: none;
     margin-left: -40px;
-    margin-top: 4em;
+    margin-top: 2em;
     margin-bottom: 2em;
+    
 }
 
 .t2 {
@@ -77,6 +83,37 @@
     background: url(images.jpg) no-repeat center;
     background-size: cover;
     min-height: 100vh;
+    border-radius: 0 0 5px 5px;
     
     
+}
+
+.seccionExperiencia {
+    margin-top: 20px;
+    padding: 50px;
+    border: solid 2px rgb(236, 34, 34);
+    border-radius: 5px;
+    width: 100%;
+    position:relative
+}
+
+.item2 {
+    margin: 0px auto;
+}
+
+.item3 {
+    position: relative;
+    left: 55%; /*problema de que cuando se achica la pantalla se sale del lugar*/
+}
+
+.encabezadoex {
+    text-align: right;
+    margin-bottom: 30px;
+}
+
+.lineasubrayado {
+    border: solid 2px rgba(184, 151, 245, 0.5);
+    width: 100px;
+    height: 2px;
+    float: right;
 }
