@@ -84,31 +84,50 @@ body {
     background-size: cover;
     min-height: 100vh;
     border-radius: 0 0 5px 5px;
+    overflow: hidden;
     
     
 }
 
 .seccionExperiencia {
-    margin-top: 20px;
-    padding: 50px;
-    border: solid 2px rgb(236, 34, 34);
+    /*margin-top: 20px;
+    margin-bottom: 1px;*/
+    padding: 10px;
+    padding-bottom: 0px;
+    border: solid 2px rgb(128, 124, 124);
     border-radius: 5px;
-    width: 100%;
-    position:relative
+    width: 95%;
+    margin: 20px auto;
+    overflow: hidden; /*esto hace que el div contenedor incluya el que esta adentro y que queda afuera al usar float*/
+}
+
+.contenedorCards {
+    width: 90%;
+    margin: 0 auto;
+    
+
+}
+
+.item1 {
+   float: left;
 }
 
 .item2 {
-    margin: 0px auto;
+
+    margin: 0 auto;
+    
 }
 
 .item3 {
-    position: relative;
-    left: 55%; /*problema de que cuando se achica la pantalla se sale del lugar*/
+    float:right;
+    
+    
 }
 
 .encabezadoex {
     text-align: right;
     margin-bottom: 30px;
+    margin-top: 25px;
 }
 
 .lineasubrayado {
@@ -116,4 +135,5 @@ body {
     width: 100px;
     height: 2px;
     float: right;
+    margin-bottom: 30px;
 }
