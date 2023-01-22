@@ -20,12 +20,14 @@ export class HeaderComponent implements OnInit {
     
     const writer = new Typewriter(target, {
       loop: true, 
-      typeColor: 'white' 
+      typeColor: 'white',
+      cursorColor: 'white',
+      blinkSpeed: 150 
     })
     
     writer
       .strings(
-        400,
+        300,
         "Soy Jorge Chamorro, un desarrollador web full stack",
         "probando el t-write", 
         "Using the 'strings' method"
