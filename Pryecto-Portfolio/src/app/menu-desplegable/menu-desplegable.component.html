@@ -1,1 +1,7 @@
-<p>menu-desplegable works!</p>
+<i class="fa-solid fa-bars" style="color: white" (click)="menuClick()"></i>
+                <div class="menu" *ngIf="showMenu">
+                  <a [routerLink]="['/route1']">Route 1</a>
+                  <a [routerLink]="['/route2']">Route 2</a>
+                  <a [routerLink]="['/route3']">Route 3</a>
+                  <a [routerLink]="['/route4']">Route 4</a>
+                </div>

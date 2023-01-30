@@ -15,6 +15,12 @@ html,body{
     padding: 0px; 
 }
 
+.menu {
+    /*position: absolute;*/
+    position: fixed;
+    top: 0;
+    left: 0;
+}
 
 .textoBanner {
     text-align: center;

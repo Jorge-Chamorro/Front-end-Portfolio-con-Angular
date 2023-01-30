@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { RouterModule } from '@angular/router'
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -15,7 +15,12 @@ import { MenuDesplegableComponent } from './menu-desplegable/menu-desplegable.co
     MenuDesplegableComponent
   ],
   imports: [
-    BrowserModule,
+    BrowserModule,RouterModule.forRoot([
+      { path: 'route1', component: HeaderComponent },
+      { path: 'route2', component: HeaderComponent },
+      { path: 'route3', component: HeaderComponent },
+      { path: 'route4', component: HeaderComponent }
+    ])
   ],
 
   providers: [],

@@ -12,4 +12,10 @@ export class MenuDesplegableComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  showMenu = false;
+
+  menuClick() {
+    this.showMenu = !this.showMenu;
+  }
+
 }
