@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
+
 @Component({
   selector: 'app-menu-desplegable',
   templateUrl: './menu-desplegable.component.html',

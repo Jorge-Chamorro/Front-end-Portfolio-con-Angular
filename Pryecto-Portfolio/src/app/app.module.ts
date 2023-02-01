@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { BannerComponent } from './banner/banner.component';
 import { MenuDesplegableComponent } from './menu-desplegable/menu-desplegable.component';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -15,12 +16,8 @@ import { MenuDesplegableComponent } from './menu-desplegable/menu-desplegable.co
     MenuDesplegableComponent
   ],
   imports: [
-    BrowserModule,RouterModule.forRoot([
-      { path: 'route1', component: HeaderComponent },
-      { path: 'route2', component: HeaderComponent },
-      { path: 'route3', component: HeaderComponent },
-      { path: 'route4', component: HeaderComponent }
-    ])
+    BrowserModule, 
+    AppRoutingModule
   ],
 
   providers: [],
