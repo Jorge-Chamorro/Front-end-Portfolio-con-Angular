@@ -1,16 +1,16 @@
-<i class = "fa-solid fa-bars fa-2x" style="color: white" (click)="menuClick()"></i>
+<i class = "fa-solid fa-bars fa-2x" style="color: white; cursor:pointer;" (click)="menuClick()"></i>
 
                 <ul class="sidebar-menu m-1" *ngIf="showMenu">
                   <li>
-                  <a [routerLink]="['/route1']"> Home </a>
+                    <a [routerLink]="['']"> Home </a>
                   </li>
                   <li>
-                  <a [routerLink]="['/route2']"> Sobre mi </a>
-                </li>
+                    <a [routerLink]="['/route2']"> Sobre mi </a>
+                  </li>
                   <li>
-                  <a [routerLink]="['/route3']"> Educación </a>
+                    <a [routerLink]="['/route3']"> Educación </a>
                   </li> 
                   <li>
-                  <a routerLink="/route4"> Experiencia </a>
-                 </li>
+                    <a [routerLink] ="['/route4']"> Experiencia </a>
+                  </li>
                 </ul>
