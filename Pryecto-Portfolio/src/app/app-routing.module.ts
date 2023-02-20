@@ -6,7 +6,8 @@ import { BannerComponent } from './banner/banner.component';
 import { SobreMiComponent } from './sobre-mi/sobre-mi.component';
 import { EducacionComponent } from './educacion/educacion.component';
 import { ExperienciaComponent } from './experiencia/experiencia.component';
-
+import { HardsoftskillsComponent } from './hardsoftskills/hardsoftskills.component';
+import { ProyectosComponent } from './proyectos/proyectos.component';
 
 
 const routes: Routes = 
@@ -14,7 +15,9 @@ const routes: Routes =
     { path: '', component: BannerComponent },
     { path: 'route2', component: SobreMiComponent },
     { path: 'route3', component: EducacionComponent },
-    { path: 'route4', component: ExperienciaComponent } 
+    { path: 'route4', component: ExperienciaComponent }, 
+    { path: 'route5', component: HardsoftskillsComponent },
+    { path: 'route6', component: ProyectosComponent }
   ]
 
 

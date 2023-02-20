@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { RouterModule } from '@angular/router'
+import { RouterModule } from '@angular/router';
+
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -10,6 +11,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { SobreMiComponent } from './sobre-mi/sobre-mi.component';
 import { EducacionComponent } from './educacion/educacion.component';
 import { ExperienciaComponent } from './experiencia/experiencia.component';
+import { HardsoftskillsComponent } from './hardsoftskills/hardsoftskills.component';
+import { ProyectosComponent } from './proyectos/proyectos.component';
+
 
 @NgModule({
   declarations: [
@@ -19,7 +23,9 @@ import { ExperienciaComponent } from './experiencia/experiencia.component';
     MenuDesplegableComponent,
     SobreMiComponent,
     EducacionComponent,
-    ExperienciaComponent
+    ExperienciaComponent,
+    HardsoftskillsComponent,
+    ProyectosComponent
   ],
   imports: [
     BrowserModule, 

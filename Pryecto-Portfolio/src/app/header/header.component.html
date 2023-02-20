@@ -24,17 +24,41 @@
             <div class="container-fluid d-flex" >
 
              
-              <div class="d-flex justify-content-center mr-auto align-items-center">
+                <div class="d-flex justify-content-center mr-auto align-items-center">
 
-
-                <app-menu-desplegable> </app-menu-desplegable>
+                <!-- <app-menu-desplegable> </app-menu-desplegable> -->
+                <!-- Quito el menu desplegable y lo hare con una navbar comun -->
               
                  <a href="#" >
                   <img  src="./assets/APLogo-20-20.png" alt="Logo argentina programa" width="150"  height="auto">
                  </a>
+
                 </div>
 
+                <div class="menuPaginas">
 
+                  <ul class="">
+                    <li class="d-inline p-2 ">
+                      <a class="text-decoration-none" [routerLink]="['']"> Home </a>
+                    </li>
+                    <li class="d-inline p-2 ">
+                       <a class="text-decoration-none" [routerLink]="['/route2']"> Sobre mi </a>
+                    </li>
+                    <li class="d-inline p-2 " >
+                      <a class="text-decoration-none" [routerLink]="['/route3']"> Educación </a>
+                    </li> 
+                    <li class="d-inline p-2 ">
+                      <a class="text-decoration-none" [routerLink] ="['/route4']"> Experiencia </a>
+                    </li>
+                    <li class="d-inline p-2 ">
+                      <a class="text-decoration-none" [routerLink] ="['/route5']"> Hard & Soft Skills </a>
+                    </li>
+                    <li class="d-inline p-2 ">
+                      <a class="text-decoration-none" [routerLink] ="['/route6']"> Proyectos </a>
+                    </li>
+                  </ul>
+
+                </div>
               
 
               <div class="ml-auto">

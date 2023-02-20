@@ -16,9 +16,6 @@ export class HeaderComponent implements OnInit {
    
   }
 
-  menuClick() {
-
-    console.log("Menu desplegable");
-  }
+ 
 
 }

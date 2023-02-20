@@ -9,6 +9,8 @@ export class BannerComponent implements OnInit {
 
   constructor() { }
 
+  titulo : string = "{ Hola }"
+
   ngOnInit(): void {
 
     const Typewriter = require('t-writer.js')
@@ -26,8 +28,8 @@ export class BannerComponent implements OnInit {
       .strings(
         300,
         "Soy Jorge Chamorro, un desarrollador web full stack",
-        "probando el t-write", 
-        "Using the 'strings' method"
+        "Muchas gracias por visitarme", 
+        "Te invito a navegar por la pagina y conocer lo que hago"
       )
       .start()
   }
