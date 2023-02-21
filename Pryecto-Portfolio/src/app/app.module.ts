@@ -13,6 +13,7 @@ import { EducacionComponent } from './educacion/educacion.component';
 import { ExperienciaComponent } from './experiencia/experiencia.component';
 import { HardsoftskillsComponent } from './hardsoftskills/hardsoftskills.component';
 import { ProyectosComponent } from './proyectos/proyectos.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -29,7 +30,8 @@ import { ProyectosComponent } from './proyectos/proyectos.component';
   ],
   imports: [
     BrowserModule, 
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
 
   providers: [],

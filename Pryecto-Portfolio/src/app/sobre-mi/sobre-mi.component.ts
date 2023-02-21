@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { DataServiceService } from '../data-service.service';
+import { InterfazPersona } from '../InterfazPersona';
 
 @Component({
   selector: 'app-sobre-mi',
@@ -7,9 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SobreMiComponent implements OnInit {
 
-  constructor() { }
-  textoSobremi : string = "Me encanta escribir codigo, diseñar y aprender constantemente sobre este mundo maraviloso de la programación. Para mi mas que un trabajo es un pasatiempo que disfruto"
+  dataUser: InterfazPersona[] = [];
+
+  constructor( private dataService: DataServiceService) { }
+
+  // textoSobremi : string = "Me encanta escribir codigo, diseñar y aprender constantemente sobre este mundo maraviloso de la programación. Para mi mas que un trabajo es un pasatiempo que disfruto"
+  
   ngOnInit(): void {
+    this.dataService.getdata().subscribe(data => this.dataUser = data);
+    console.log(this.dataUser);
   }
 
 }
