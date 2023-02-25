@@ -6,11 +6,11 @@
   <div class="container">
     <div class="card text-center m-4" style="max-width:1000px">
       <div class="card-header">
-        Destacado
+      {{ this.dataEducacion[0].institucion}}
       </div>
       <div class="card-body">
-        <h5 class="card-title">Tratamiento especial del título</h5>
-        <p class="card-text">Con texto de apoyo a continuación como introducción natural a contenido adicional.</p>
+        <h5 class="card-title">{{this.dataEducacion[0].titulo}}</h5>
+        <p class="card-text">Curse la carrera desde {{ this.dataEducacion[0].fecha_inicio }} hasta {{ this.dataEducacion[0].fecha_final}}.</p>
         <a href="#" class="btn btn-primary">Ir a algún lugar</a>
       </div>
       <div class="card-footer text-muted">

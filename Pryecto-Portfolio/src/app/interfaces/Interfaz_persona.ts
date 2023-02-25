@@ -1,4 +1,4 @@
-export interface InterfazPersona {
+export interface Interfaz_persona {
     id: number;
     nombre: string;
     apellido: string;
