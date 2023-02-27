@@ -14,7 +14,7 @@ import { ExperienciaComponent } from './experiencia/experiencia.component';
 import { HardsoftskillsComponent } from './hardsoftskills/hardsoftskills.component';
 import { ProyectosComponent } from './proyectos/proyectos.component';
 import { HttpClientModule } from '@angular/common/http';
-
+import { NgCircleProgressModule } from 'ng-circle-progress';
 
 @NgModule({
   declarations: [
@@ -31,7 +31,8 @@ import { HttpClientModule } from '@angular/common/http';
   imports: [
     BrowserModule, 
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    NgCircleProgressModule.forRoot({})
   ],
 
   providers: [],

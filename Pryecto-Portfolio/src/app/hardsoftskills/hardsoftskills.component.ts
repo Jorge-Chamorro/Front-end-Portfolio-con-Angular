@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { DataServiceService } from '../data-service.service';
+import { Interfaz_hyss } from '../interfaces/Interfaz_hyss';
 
 @Component({
   selector: 'app-hardsoftskills',
@@ -7,9 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HardsoftskillsComponent implements OnInit {
 
-  constructor() { }
+  dataSkill: Interfaz_hyss[] = [];
+
+  constructor( private dataService : DataServiceService) { }
 
   ngOnInit(): void {
+    this.dataService.gethyss().subscribe( data => this.dataSkill = data)
   }
 
 }

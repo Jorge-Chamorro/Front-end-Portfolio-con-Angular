@@ -82,13 +82,20 @@
       "id": 1,
       "skill": "Html",
       "porcentaje": "60",
+      "subtitulo": "HTML",
+      "color_inner": "cyan",
+      "color_outer": "blue",
        "id_persona": "1"
+
       
     },
     {
       "id": 2,
       "skill": "Css",
-      "porcentaje": "60",
+      "porcentaje": "50",
+      "subtitulo": "CSS",
+      "color_inner": "cyan",
+      "color_outer": "blue",
        "id_persona": "1"
       
     }
