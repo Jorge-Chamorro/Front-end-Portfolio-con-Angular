@@ -1,50 +1,27 @@
 <div style=" overflow-y: scroll; scrollbar-width: none; height: 85vh; width: 80%; margin: auto;" class="banner">
 
-    <div class="contenedorCards ">
+    <div class="contenedorCards " >
       <div class="encabezadoex m-4"><h2>Educación</h2>
     </div>
-  <div class="container">
+  <div class="container" *ngFor = "let item of dataEducacion">
     <div class="card text-center m-4" style="max-width:1000px">
       <div class="card-header">
-      {{ this.dataEducacion[0].institucion}}
+      {{ item.institucion}}
       </div>
       <div class="card-body">
-        <h5 class="card-title">{{this.dataEducacion[0].titulo}}</h5>
-        <p class="card-text">Curse la carrera desde {{ this.dataEducacion[0].fecha_inicio }} hasta {{ this.dataEducacion[0].fecha_final}}.</p>
-        <a href="#" class="btn btn-primary">Ir a algún lugar</a>
+        <h5 class="card-title">{{ item.titulo}}</h5>
+        <p class="card-text">Curse la carrera desde {{ item.fecha_inicio }} hasta {{ item.fecha_final}}.</p>
+        <a href="#" class="btn btn-primary">Ver Certificado</a>
       </div>
       <div class="card-footer text-muted">
-        Hace 2 días
+        Descripcion de las habilidades generadas
       </div>
     </div>
 
-    <div class="card text-center m-4" style="max-width:1000px">
-      <div class="card-header">
-        Destacado
-      </div>
-      <div class="card-body">
-        <h5 class="card-title">Tratamiento especial del título</h5>
-        <p class="card-text">Con texto de apoyo a continuación como introducción natural a contenido adicional.</p>
-        <a href="#" class="btn btn-primary">Ir a algún lugar</a>
-      </div>
-      <div class="card-footer text-muted">
-        Hace 2 días
-      </div>
-    </div>
+   
 
-    <div class="card text-center m-4" style="max-width:1000px">
-      <div class="card-header">
-        Destacado
-      </div>
-      <div class="card-body">
-        <h5 class="card-title">Tratamiento especial del título</h5>
-        <p class="card-text">Con texto de apoyo a continuación como introducción natural a contenido adicional.</p>
-        <a href="#" class="btn btn-primary">Ir a algún lugar</a>
-      </div>
-      <div class="card-footer text-muted">
-        Hace 2 días
-      </div>
-    </div>
+  
+
   </div>
 
 </div>

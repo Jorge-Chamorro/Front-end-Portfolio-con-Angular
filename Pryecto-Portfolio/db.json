@@ -32,7 +32,7 @@
           "id": 2,
           "institucion": "Ministerio de educación",
           "titulo": "Full Stack Developer",
-          "Fecha_inicio": "2022-01-01",
+          "fecha_inicio": "2022-01-01",
           "fecha_final": "2023-03-25",
           "id_persona": "1"
           
@@ -44,6 +44,7 @@
     {
         "id": 1,
         "empresa": "empresa de prueba",
+        "url_foto_empresa": "../assets/Logo_global.jpg",
         "descripcion": "Este es un trabajo de prueba",
         "trabajo_actual": "1",
         "fecha_inicio": "2022-01-01",
@@ -52,8 +53,20 @@
         
       },
       {
-        "id": 1,
+        "id": 2,
         "empresa": "empresa de prueba",
+        "url_foto_empresa": "../assets/Logo_microsoft.jpg",
+        "descripcion": "Este es un trabajo de prueba",
+        "trabajo_actual": "1",
+        "fecha_inicio": "2022-01-01",
+        "fecha_final": "2023-03-25",
+        "id_persona": "1"
+        
+      },
+      {
+        "id": 3,
+        "empresa": "empresa de prueba",
+        "url_foto_empresa": "../assets/Logo_microsoft.jpg",
         "descripcion": "Este es un trabajo de prueba",
         "trabajo_actual": "1",
         "fecha_inicio": "2022-01-01",

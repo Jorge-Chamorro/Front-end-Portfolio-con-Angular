@@ -25,6 +25,18 @@ export class DataServiceService {
   
   }
 
- 
+  getexperiencia(): Observable<Interfaz_experiencia[]> {
+    return this.http.get<Interfaz_experiencia[]> (this.apiUrl + 'experiencia')
+  }
 
+  gethyss(): Observable<Interfaz_hyss[]> {
+    return this.http.get<Interfaz_hyss[]> (this.apiUrl + 'hyss')
+  }
+
+  getproyectos(): Observable<Interfaz_proyectos[]> {
+    return this.http.get<Interfaz_proyectos[]> (this.apiUrl + 'proyectos')
+  }
+
+
+  
 }

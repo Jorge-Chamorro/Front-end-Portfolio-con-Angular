@@ -4,63 +4,22 @@
       </div>
 
 
-      <div class="row g-0 d-flex justify-content-evenly">
+      <div class="row g-0 d-flex justify-content-evenly" >
 
 
-       <div class="card mb-5  col-md-5 m-1 rounded-0">
+       <div *ngFor = "let item of dataExperiencia" class="card mb-5  col-md-5 m-1 rounded-2">
           <div class="">
-            <img src="./assets/Logo_global.jpg" class="img-fluid rounded-start" alt="...">
+            <img [src] = "item.url_foto_empresa" class="img-fluid rounded-start" alt="...">
           </div>
           <div class="">
             <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-              <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+              <h5 class="card-title">{{ item.empresa }} </h5>
+              <p class="card-text">{{ item.descripcion }} </p>
+              <p class="card-text"><small class="text-muted">Fui parte desde {{ item.fecha_inicio }} hasta {{ item.fecha_final }}</small></p>
             </div>
           </div>
        </div>
-          <div class="card mb-5    col-md-5" >
-            <div class="">
-              <img src="./assets/Logo_mercadolibre.png" class="img-fluid rounded-start" alt="...">
-            </div>
-           <div class="">
-              <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-               <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-              </div>
-           </div>
-          </div>
-      </div>    
-      
-      
-      <div class="row g-0 d-flex justify-content-evenly">
-
-
-        <div class="card mb-5  col-md-5 m-1">
-           <div class="">
-             <img src="./assets/Logo_global.jpg" class="img-fluid rounded-start" alt="...">
-           </div>
-           <div class="">
-             <div class="card-body">
-               <h5 class="card-title">Card title</h5>
-               <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-               <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-             </div>
-           </div>
-        </div>
-           <div class="card mb-5    col-md-5" >
-             <div class="">
-               <img src="./assets/Logo_mercadolibre.png" class="img-fluid rounded-start" alt="...">
-             </div>
-            <div class="">
-               <div class="card-body">
-                 <h5 class="card-title">Card title</h5>
-                 <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-               </div>
-            </div>
-           </div>
+          
        </div>    
 
 
