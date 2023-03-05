@@ -1,17 +1,48 @@
 
       <section class = "d-flex justify-content-center" >
-        <div  class = "card mb-5 mt-5 rounded-1 col-sm-8 col-md-8" style="max-width: 640px; background-color: rgba(105, 105, 105, 0.442);">
+      
+        <div *ngIf="!editando" class = "card mb-5 mt-5 rounded-1 col-sm-8 col-md-8" style="max-width: 640px; background-color: rgba(105, 105, 105, 0.442);">
+          <i class="fa fa-pencil position-absolute top-0 end-0 m-3" style="font-size: 1.5rem; cursor: pointer;" (click)="openEditForm()" aria-hidden="true"></i>
           <div class = "row g-0"> 
             <div class = "col-sm-4 col-md-4 mt-0 mb-0">
-              <img [src] = "dataUser[0].url_foto" class="img-fluid rounded-start" alt="...">
+              <img [src] = "dataUser[this.idUser - 1].url_foto" class="img-fluid rounded-start" alt="...">
             </div>
             <div class = "col-sm-6 col-md-6">
               <div class = "card-body">
-                <h5 class = "card-title">{{ dataUser[0].nombre }} {{dataUser[0].apellido}}</h5>
-                <p class = "card-text">{{ dataUser[0].sobre_mi }}</p>
+                <h5 class = "card-title">{{ dataUser[this.idUser - 1].nombre }} {{dataUser[this.idUser - 1].apellido}}</h5>
+                <p class = "card-text">{{ dataUser[this.idUser - 1].sobre_mi }}</p>
               </div>
             </div>
           </div>
         </div>
+
+        
+          
+        <form *ngIf="editando" (submit)="guardarPersona()" class="card card mb-5 mt-5 rounded-1 col-sm-8 col-md-8" style="max-width: 640px; background-color: rgba(244, 234, 234, 0.621);">
+          <div class="card-body">
+            <div class="form-group">
+              <label for="nombre">Nombre</label>
+              <input type="text" [(ngModel)]="dataUser[this.idUser - 1].nombre" name="nombre" id="nombre" class="form-control" required>
+            </div>
+            <div class="form-group">
+              <label for="apellido">Apellido</label>
+              <input type="text" [(ngModel)]="dataUser[this.idUser - 1].apellido" name="apellido" id="apellido" class="form-control" required>
+            </div>
+            <div class="form-group">
+              <label for="url_foto">URL de foto</label>
+              <input type="text" [(ngModel)]="dataUser[this.idUser - 1].url_foto" name="url_foto" id="url_foto" class="form-control">
+            </div>
+            <div class="form-group">
+              <label for="sobre_mi">Sobre mí</label>
+              <textarea [(ngModel)]="dataUser[this.idUser - 1].sobre_mi" name="sobre_mi" id="sobre_mi" class="form-control" rows="5"></textarea>
+            </div>
+            <div class="form-group">
+              <label for="correo">Correo electrónico</label>
+              <input type="email" [(ngModel)]="dataUser[this.idUser - 1].correo" name="correo" id="correo" class="form-control" required>
+            </div>
+            <button type="submit" class="btn btn-primary my-2 ">Guardar</button>
+            <button type="button" (click)="cancelEdition()" class="btn btn-secondary mx-2">Cancelar</button>
+          </div>
+        </form>
 
       </section>

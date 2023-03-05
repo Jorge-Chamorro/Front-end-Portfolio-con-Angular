@@ -10,6 +10,8 @@ import { Interfaz_persona } from '../interfaces/Interfaz_persona';
 export class SobreMiComponent implements OnInit {
 
   dataUser: Interfaz_persona[] = [];
+  editando = false;
+  idUser: number = 2;
 
   constructor( private dataService: DataServiceService) { }
 
@@ -18,6 +20,19 @@ export class SobreMiComponent implements OnInit {
   ngOnInit(): void {
     this.dataService.getpersona().subscribe(data => this.dataUser = data);
     console.log(this.dataUser);
+  }
+
+  openEditForm() {
+    this.editando = true;
+  }
+
+  cancelEdition() {
+    this.editando = false;
+  }
+
+  guardarPersona() {
+    this.dataService.guardarPersona(this.dataUser[this.idUser - 1], this.idUser).subscribe();
+    this.editando = false;
   }
 
 }

@@ -37,6 +37,9 @@ export class DataServiceService {
     return this.http.get<Interfaz_proyectos[]> (this.apiUrl + 'proyectos')
   }
 
+  guardarPersona(persona: Interfaz_persona, usuarioId:number): Observable<Interfaz_persona> {
+   return this.http.put<Interfaz_persona> (this.apiUrl + 'persona/' + usuarioId, persona);
+  }
 
   
 }

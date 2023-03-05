@@ -1,93 +1,81 @@
 {
-  "persona" : [
+  "persona": [
     {
-        "id": 1,
-        "nombre": "Jorge",
-        "apellido": "Chamorro",
-        "url_foto": "./assets/jorge.png",
-        "sobre_mi": "Me encanta escribir codigo, diseñar y aprender constantemente sobre este mundo maraviloso de la programación. Para mi mas que un trabajo es un pasatiempo que disfruto",
-        "correo": "jorgeorlandochamorro@gmail.com"
-      },
-      {
-        "id": 2,
-        "nombre": "Martin",
-        "apellido": "Lopez",
-        "url_foto": "./assets/jorge.png",
-        "sobre_mi": "Me encanta escribir codigo, diseñar y aprender constantemente sobre este mundo maraviloso de la programación. Para mi mas que un trabajo es un pasatiempo que disfruto",
-        "correo": "jorgeorlandochamorro@gmail.com"
-      }
-    ],
-
-    "educacion" : [
-      {
-          "id": 1,
-          "institucion": "Ministerio de educación",
-          "titulo": "Full Stack Developer",
-          "fecha_inicio": "2022-01-01",
-          "fecha_final": "2023-03-25",
-          "id_persona": "1"
-          
-        },
-        {
-          "id": 2,
-          "institucion": "Ministerio de educación",
-          "titulo": "Full Stack Developer",
-          "fecha_inicio": "2022-01-01",
-          "fecha_final": "2023-03-25",
-          "id_persona": "1"
-          
-        }
-
+      "id": 1,
+      "nombre": "Jorge Orlando",
+      "apellido": "Chamorro",
+      "url_foto": "./assets/jorge.png",
+      "sobre_mi": "Me encanta escribir codigo, diseñar y aprender constantemente sobre este mundo maraviloso de la programación. Para mi mas que un trabajo es un pasatiempo que disfruto",
+      "correo": "jorgeorlandochamorro@gmail.com"
+    },
+    {
+      "id": 2,
+      "nombre": "Jorge",
+      "apellido": "Funciono espectacular",
+      "url_foto": "./assets/jorge.png",
+      "sobre_mi": "Algo sobre mi, agregando\n",
+      "correo": "jorgeorlandochamorro@gmail.com"
+    }
   ],
-
-  "experiencia" : [
+  "educacion": [
     {
-        "id": 1,
-        "empresa": "empresa de prueba",
-        "url_foto_empresa": "../assets/Logo_global.jpg",
-        "descripcion": "Este es un trabajo de prueba",
-        "trabajo_actual": "1",
-        "fecha_inicio": "2022-01-01",
-        "fecha_final": "2023-03-25",
-        "id_persona": "1"
-        
-      },
-      {
-        "id": 2,
-        "empresa": "empresa de prueba",
-        "url_foto_empresa": "../assets/Logo_microsoft.jpg",
-        "descripcion": "Este es un trabajo de prueba",
-        "trabajo_actual": "1",
-        "fecha_inicio": "2022-01-01",
-        "fecha_final": "2023-03-25",
-        "id_persona": "1"
-        
-      },
-      {
-        "id": 3,
-        "empresa": "empresa de prueba",
-        "url_foto_empresa": "../assets/Logo_microsoft.jpg",
-        "descripcion": "Este es un trabajo de prueba",
-        "trabajo_actual": "1",
-        "fecha_inicio": "2022-01-01",
-        "fecha_final": "2023-03-25",
-        "id_persona": "1"
-        
-      }
-
-],
-
-"hyss" : [
-  {
+      "id": 1,
+      "institucion": "Ministerio de educación",
+      "titulo": "Full Stack Developer",
+      "fecha_inicio": "2022-01-01",
+      "fecha_final": "2023-03-25",
+      "id_persona": "1"
+    },
+    {
+      "id": 2,
+      "institucion": "Ministerio de educación",
+      "titulo": "Full Stack Developer",
+      "fecha_inicio": "2022-01-01",
+      "fecha_final": "2023-03-25",
+      "id_persona": "1"
+    }
+  ],
+  "experiencia": [
+    {
+      "id": 1,
+      "empresa": "empresa de prueba",
+      "url_foto_empresa": "../assets/Logo_global.jpg",
+      "descripcion": "Este es un trabajo de prueba",
+      "trabajo_actual": "1",
+      "fecha_inicio": "2022-01-01",
+      "fecha_final": "2023-03-25",
+      "id_persona": "1"
+    },
+    {
+      "id": 2,
+      "empresa": "empresa de prueba",
+      "url_foto_empresa": "../assets/Logo_microsoft.jpg",
+      "descripcion": "Este es un trabajo de prueba",
+      "trabajo_actual": "1",
+      "fecha_inicio": "2022-01-01",
+      "fecha_final": "2023-03-25",
+      "id_persona": "1"
+    },
+    {
+      "id": 3,
+      "empresa": "empresa de prueba",
+      "url_foto_empresa": "../assets/Logo_microsoft.jpg",
+      "descripcion": "Este es un trabajo de prueba",
+      "trabajo_actual": "1",
+      "fecha_inicio": "2022-01-01",
+      "fecha_final": "2023-03-25",
+      "id_persona": "1"
+    }
+  ],
+  "hyss": [
+    {
       "id": 1,
       "skill": "Html",
       "porcentaje": "60",
       "subtitulo": "HTML",
       "color_inner": "cyan",
       "color_outer": "blue",
-       "id_persona": "1"
-
-      
+      "id_persona": "1"
     },
     {
       "id": 2,
@@ -96,32 +84,33 @@
       "subtitulo": "CSS",
       "color_inner": "cyan",
       "color_outer": "blue",
-       "id_persona": "1"
-      
+      "id_persona": "1"
     }
-],
-
-"proyectos" : [
-  {
+  ],
+  "proyectos": [
+    {
       "id": 1,
       "nombre_proyecto": "Portfolio Web",
       "descripcion_proyecto": "Un portfolio Web usando angular, spring-boot y Mysql",
-      "url_foto_proyecto": "url_foto",
+      "url_foto_proyecto": "../assets/proyectoimagen.jpg",
       "url_direccion_proyecto": "url_direccion_proyecto",
       "id_persona": "1"
-      
     },
     {
       "id": 2,
       "nombre_proyecto": "Portfolio Web",
       "descripcion_proyecto": "Un portfolio Web usando angular, spring-boot y Mysql",
-      "url_foto_proyecto": "url_foto",
+      "url_foto_proyecto": "../assets/Proyectoimagen2.jpg",
       "url_direccion_proyecto": "url_direccion_proyecto",
       "id_persona": "1"
-      
+    },
+    {
+      "id": 3,
+      "nombre_proyecto": "Portfolio Web",
+      "descripcion_proyecto": "Un portfolio Web usando angular, spring-boot y Mysql",
+      "url_foto_proyecto": "../assets/proyectoimagen3.jpg",
+      "url_direccion_proyecto": "url_direccion_proyecto",
+      "id_persona": "1"
     }
-
-]
-
-
-  }
+  ]
+}
