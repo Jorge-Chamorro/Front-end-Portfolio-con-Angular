@@ -10,8 +10,8 @@
     },
     {
       "id": 2,
-      "nombre": "Jorge",
-      "apellido": "Funciono espectacular",
+      "nombre": "Jorge Orlando",
+      "apellido": "Chamorro",
       "url_foto": "./assets/jorge.png",
       "sobre_mi": "Algo sobre mi, agregando\n",
       "correo": "jorgeorlandochamorro@gmail.com"
@@ -20,18 +20,22 @@
   "educacion": [
     {
       "id": 1,
-      "institucion": "Ministerio de educación",
-      "titulo": "Full Stack Developer",
+      "institucion": "Escuela primaria en 1987",
+      "titulo": "Java y net",
       "fecha_inicio": "2022-01-01",
       "fecha_final": "2023-03-25",
+      "url_titulo": "La pondre mas tarde",
+      "descripcion": "Una buena descrpcion",
       "id_persona": "1"
     },
     {
       "id": 2,
-      "institucion": "Ministerio de educación",
-      "titulo": "Full Stack Developer",
+      "institucion": "Ministerio de educación - INSPT",
+      "titulo": "Angular",
       "fecha_inicio": "2022-01-01",
       "fecha_final": "2023-03-25",
+      "url_titulo": "www.l.com",
+      "descripcion": "Descripcion",
       "id_persona": "1"
     }
   ],

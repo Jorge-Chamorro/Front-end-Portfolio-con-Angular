@@ -4,5 +4,7 @@ export interface Interfaz_educacion {
     titulo: string;
     fecha_inicio: string;
     fecha_final: string;
+    url_titulo: string;
+    descripcion: string;
     id_persona: number;
 }

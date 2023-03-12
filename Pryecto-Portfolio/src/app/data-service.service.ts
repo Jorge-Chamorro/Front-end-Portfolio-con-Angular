@@ -41,5 +41,8 @@ export class DataServiceService {
    return this.http.put<Interfaz_persona> (this.apiUrl + 'persona/' + usuarioId, persona);
   }
 
+  guardarEducacion(educacion: Interfaz_educacion, idEducacion:number): Observable<Interfaz_educacion> {
+   return this.http.put<Interfaz_educacion> (this.apiUrl + 'educacion/' + idEducacion, educacion); 
+  }
   
 }
