@@ -20,7 +20,7 @@
   "educacion": [
     {
       "id": 1,
-      "institucion": "Escuela primaria en 1987",
+      "institucion": "Escuela primaria en 1987 a 2023",
       "titulo": "Java y net",
       "fecha_inicio": "2022-01-01",
       "fecha_final": "2023-03-25",
@@ -42,19 +42,18 @@
   "experiencia": [
     {
       "id": 1,
-      "empresa": "empresa de prueba",
-      "url_foto_empresa": "../assets/Logo_global.jpg",
-      "descripcion": "Este es un trabajo de prueba",
-      "trabajo_actual": "1",
-      "fecha_inicio": "2022-01-01",
-      "fecha_final": "2023-03-25",
+      "skill": "Html",
+      "porcentaje": 30,
+      "subtitulo": "JAVA",
+      "color_inner": "green",
+      "color_outer": "yellow",
       "id_persona": "1"
     },
     {
       "id": 2,
       "empresa": "empresa de prueba",
       "url_foto_empresa": "../assets/Logo_microsoft.jpg",
-      "descripcion": "Este es un trabajo de prueba",
+      "descripcion": "Nada que ver",
       "trabajo_actual": "1",
       "fecha_inicio": "2022-01-01",
       "fecha_final": "2023-03-25",
@@ -64,7 +63,7 @@
       "id": 3,
       "empresa": "empresa de prueba",
       "url_foto_empresa": "../assets/Logo_microsoft.jpg",
-      "descripcion": "Este es un trabajo de prueba",
+      "descripcion": "ultima pruebilla",
       "trabajo_actual": "1",
       "fecha_inicio": "2022-01-01",
       "fecha_final": "2023-03-25",
@@ -75,26 +74,26 @@
     {
       "id": 1,
       "skill": "Html",
-      "porcentaje": "60",
-      "subtitulo": "HTML",
-      "color_inner": "cyan",
-      "color_outer": "blue",
+      "porcentaje": 40,
+      "subtitulo": "JAVA",
+      "color_inner": "yellow",
+      "color_outer": "green",
       "id_persona": "1"
     },
     {
       "id": 2,
       "skill": "Css",
-      "porcentaje": "50",
+      "porcentaje": 80,
       "subtitulo": "CSS",
       "color_inner": "cyan",
-      "color_outer": "blue",
+      "color_outer": "red",
       "id_persona": "1"
     }
   ],
   "proyectos": [
     {
       "id": 1,
-      "nombre_proyecto": "Portfolio Web",
+      "nombre_proyecto": "Probando los cambios",
       "descripcion_proyecto": "Un portfolio Web usando angular, spring-boot y Mysql",
       "url_foto_proyecto": "../assets/proyectoimagen.jpg",
       "url_direccion_proyecto": "url_direccion_proyecto",
@@ -102,15 +101,15 @@
     },
     {
       "id": 2,
-      "nombre_proyecto": "Portfolio Web",
-      "descripcion_proyecto": "Un portfolio Web usando angular, spring-boot y Mysql",
+      "nombre_proyecto": "Portfolio We",
+      "descripcion_proyecto": "jfdljdfalsjfdalsjdfsldfjñsldfjasñdlfjañsldfjñlsdfjñsldfjañsldfjañsldfjañsldkfjañsldfjñsldfj",
       "url_foto_proyecto": "../assets/Proyectoimagen2.jpg",
       "url_direccion_proyecto": "url_direccion_proyecto",
       "id_persona": "1"
     },
     {
       "id": 3,
-      "nombre_proyecto": "Portfolio Web",
+      "nombre_proyecto": "Jugando un poco",
       "descripcion_proyecto": "Un portfolio Web usando angular, spring-boot y Mysql",
       "url_foto_proyecto": "../assets/proyectoimagen3.jpg",
       "url_direccion_proyecto": "url_direccion_proyecto",

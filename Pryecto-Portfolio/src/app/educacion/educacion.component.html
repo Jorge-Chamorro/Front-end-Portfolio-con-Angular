@@ -1,7 +1,9 @@
-<div *ngIf="!editando" style=" overflow-y: scroll; scrollbar-width: none; height: 85vh; width: 80%; margin: auto;" class="banner">
+<div *ngIf="!editando && !agregando" style=" overflow-y: scroll; scrollbar-width: none; height: 85vh; width: 80%; margin: auto;" class="banner">
 
     <div class="contenedorCards " >
-     <div class="encabezadoex m-4"><h2>Educación</h2>
+     <div class="encabezadoex m-4 d-flex flex-row ">
+       <h2>Educación</h2>
+       <i class="fa fa-circle-plus mx-3 pt-1" style="font-size: 1.5rem; cursor: pointer;" (click)="openNewForm()"></i>
      </div>
     <div class="container" *ngFor = "let item of dataEducacion">
      <div class="card text-center m-4" style="max-width:1000px">
@@ -9,6 +11,7 @@
        {{ item.institucion}}
       </div>
       <i class="fa fa-pencil position-absolute top-0 end-0 m-3" style="font-size: 1.5rem; cursor: pointer;" (click)="openEditForm(item.id)" aria-hidden="true"></i>
+      
        <div class="card-body">
          <h5 class="card-title">{{ item.titulo}}</h5>
          <p class="card-text">Curse la carrera desde {{ item.fecha_inicio }} hasta {{ item.fecha_final}}.</p>
@@ -29,7 +32,7 @@
 
 </div>
 
-<form  *ngIf="editando" (submit)="guardarEducacion()" class="card card mb-5 mt-5 rounded-1 col-sm-8 col-md-8" style="margin: auto; max-width: 640px; background-color: rgba(244, 234, 234, 0.621);">
+<form  *ngIf="editando" (submit)="guardarEducacion()" class="card card mb-5 mt-5 rounded-1 col-sm-8 col-md-8" style="overflow-y: scroll; scrollbar-width: none; height: 70vh; width: 80%; margin: auto; max-width: 640px; background-color: rgba(244, 234, 234, 0.621);">
   <div class="card-body">
     <div class="form-group">
       <label for="institucion">Institucion</label>
@@ -58,5 +61,38 @@
 
     <button type="submit" class="btn btn-primary my-2 ">Guardar</button>
     <button type="button" (click)="cancelEdition()" class="btn btn-secondary mx-2">Cancelar</button>
+  </div>
+</form>
+
+
+<form  *ngIf="agregando" (submit)="guardarEducacion()" class="card card mb-5 mt-5 rounded-1 col-sm-8 col-md-8" style="overflow-y: scroll; scrollbar-width: none; height: 70vh; width: 80%; margin: auto; max-width: 640px; background-color: rgba(244, 234, 234, 0.621);">
+  <div class="card-body">
+    <div class="form-group">
+      <label for="institucion">Institucion</label>
+      <input type="text" [(ngModel)]="dataEducacion[itemAModificar - 1].institucion" name="institucion" id="institucion" class="form-control" required>
+    </div>
+    <div class="form-group">
+      <label for="titulo">Titulo</label>
+      <input type="text" [(ngModel)]="dataEducacion[itemAModificar- 1].titulo" name="titulo" id="titulo" class="form-control" required>
+    </div>
+    <div class="form-group">
+      <label for="fecha_inicio">Fecha de inicio</label>
+      <input type="text" [(ngModel)]="dataEducacion[itemAModificar - 1].fecha_inicio" name="fecha_inicio" id="fecha_inicio" class="form-control">
+    </div>
+    <div class="form-group">
+      <label for="fecha_final">Fecha de Finalizacion</label>
+      <textarea [(ngModel)]="dataEducacion[itemAModificar - 1].fecha_final" name="fecha_final" id="fecha_final" class="form-control" rows="5"></textarea>
+    </div>
+    <div class="form-group">
+      <label for="url_titulo">Url del Titulo</label>
+      <input type="text" [(ngModel)]="dataEducacion[itemAModificar - 1].url_titulo" name="url_titulo" id="url_titulo" class="form-control" required>
+    </div>
+    <div class="form-group">
+      <label for="descripcion">Descripcion</label>
+      <input type="text" [(ngModel)]="dataEducacion[itemAModificar - 1].descripcion" name="descripcion" id="descripcion" class="form-control" required>
+    </div>
+
+    <button type="submit" class="btn btn-primary my-2 ">Guardar</button>
+    <button type="button" (click)="cancelNew()" class="btn btn-secondary mx-2">Cancelar</button>
   </div>
 </form>

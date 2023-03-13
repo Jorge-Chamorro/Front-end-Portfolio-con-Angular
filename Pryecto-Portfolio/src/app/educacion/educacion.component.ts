@@ -11,6 +11,7 @@ export class EducacionComponent implements OnInit {
 
   dataEducacion:Interfaz_educacion[] = [];
   editando = false;
+  agregando = false;
   itemAModificar:number = 0;
 
 
@@ -33,7 +34,7 @@ export class EducacionComponent implements OnInit {
   guardarEducacion( ) {
     this.dataService.guardarEducacion(this.dataEducacion[this.itemAModificar - 1], this.itemAModificar).subscribe();
     this.editando = false;
-    console.log( "estoy pasando el objeto: ", this.dataEducacion[this.itemAModificar - 1], this.itemAModificar)
+    
 
   }
 
@@ -41,6 +42,12 @@ export class EducacionComponent implements OnInit {
     this.editando = false;
   }
 
+  openNewForm() {
+    this.agregando = true;
+  }
 
+  cancelNew() {
+    this.agregando = false;
+  }
 
 }
