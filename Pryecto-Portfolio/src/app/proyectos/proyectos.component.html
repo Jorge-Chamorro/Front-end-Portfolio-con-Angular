@@ -1,36 +1,19 @@
-<section *ngIf="!editando" style = "overflow-y: scroll; scrollbar-width: none; height: 85vh; width: 80%; margin: auto;" class="banner">
+<section *ngIf="!editando && !agregando" style = "overflow-y: scroll; scrollbar-width: none; height: 85vh; width: 80%; margin: auto;" class="banner">
 
-
-
-    <div  id="carouselExampleCaptions" class="carousel slide container vh-50 mb-5 pb-5" data-bs-ride="carousel">
-      <div class="carousel-indicators">
-        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+  <ngb-carousel>
+    <ng-template ngbSlide *ngFor="let item of dataUser">
+      <i class="fa fa-circle-plus mx-3 pt-1 position-absolute top-0 start-0 m-3" style="z-index:50000000; font-size: 1.5rem; cursor: pointer;" (click)="openNewForm()"></i>
+      <i class="fa fa-pencil position-absolute top-0 end-0 mx-5 mt-3" style="z-index:50000000; font-size: 1.5rem; cursor: pointer;" (click)="openEditForm(item.id)" aria-hidden="true"></i>
+      <img [src]="item.url_foto_proyecto"  style="height: 500px; width: 100%"/>
+      <div class="carousel-caption">
+        <h3>{{ item.nombre_proyecto }}</h3>
+        <p>{{ item.descripcion_proyecto }}</p>
       </div>
-      <div  class="carousel-inner" >
-        
-        <div  *ngFor = "let item of dataUser" [class]="'carousel-item ' + (item.id === 1 ? 'active' : '')"> 
-          <!-- En el div anterior se usa la directiva [class] porque la  [ngClass] estaba causando conflictos con bootstrap -->
-          <i class="fa fa-pencil position-absolute top-0 end-0 m-3" style="z-index:50000000; font-size: 1.5rem; cursor: pointer;" (click)="openEditForm(item.id)" aria-hidden="true"></i>
-          <img [src]="item.url_foto_proyecto" class="d-block w-100" alt="...">
-          <div class="carousel-caption d-none d-md-block">
-            <h5>{{item.nombre_proyecto}}</h5>
-            <p>{{item.descripcion_proyecto}}</p>
-          </div>
-        </div> 
-          
-      </div>
-      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Anterior</span>
-      </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Siguiente</span>
-      </button>
-    </div>
-   
+    </ng-template>
+  </ngb-carousel>
+
+    
+  
 
   </section>
 
@@ -58,3 +41,30 @@
       <button type="button" (click)="cancelEdition()" class="btn btn-secondary mx-2">Cancelar</button>
     </div>
   </form>
+
+  <form  #formulario="ngForm" *ngIf="agregando" (submit)="agregarProyecto()" class="card card mb-5 mt-5 rounded-1 col-sm-8 col-md-8" style="overflow-y: scroll; scrollbar-width: none; height: 70vh; width: 80%; margin: auto; max-width: 640px; background-color: rgba(244, 234, 234, 0.621);">
+    <div class="card-body">
+      <div class="form-group">
+        <label for="nombre_proyecto">Proyecto</label>
+        <input type="text" [(ngModel)]="proyectoNuevo.nombre_proyecto" name="nombre_proyecto" id="nombre_proyecto" class="form-control" required>
+      </div>
+      <div class="form-group">
+        <label for="descripcion_proyecto">Descripcion</label>
+        <input type="text" [(ngModel)]="proyectoNuevo.descripcion_proyecto" name="descripcion_proyecto" id="descripcion_proyecto" class="form-control" required>
+      </div>
+      <div class="form-group">
+        <label for="url_foto_proyecto">Url de la Foto del Proyecto</label>
+        <input type="text" [(ngModel)]="proyectoNuevo.url_foto_proyecto" name="url_foto_proyecto" id="url_foto_proyecto" class="form-control">
+      </div>
+      <div class="form-group">
+        <label for="url_direccion_proyecto">Url del proyecto</label>
+        <input type="text" [(ngModel)]="proyectoNuevo.url_direccion_proyecto" name="url_direccion_proyecto" id="url_direccion_proyecto" class="form-control" required>
+            </div>
+      
+  
+      <button type="submit" class="btn btn-primary my-2 ">Guardar</button>
+      <button type="button" (click)="cancelNew()" class="btn btn-secondary mx-2">Cancelar</button>
+    </div>
+  </form>
+
+ 

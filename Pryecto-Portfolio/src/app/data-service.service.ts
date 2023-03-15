@@ -72,4 +72,19 @@ export class DataServiceService {
    agregarEducacion(educacion: Interfaz_educacion): Observable<Interfaz_educacion> {
     return this.http.post<Interfaz_educacion>(this.apiUrl + 'educacion/', educacion); 
    }
+
+
+   agregarExperiencia(experiencia: Interfaz_experiencia): Observable<Interfaz_experiencia> {
+    return this.http.post<Interfaz_experiencia>(this.apiUrl + 'experiencia/', experiencia); 
+   }
+
+   agregarSkill(skill: Interfaz_hyss): Observable<Interfaz_hyss> {
+    return this.http.post<Interfaz_hyss>(this.apiUrl + 'hyss/', skill); 
+   }
+
+   agregarProyecto(proyecto: Interfaz_proyectos): Observable<Interfaz_proyectos> {
+    return this.http.post<Interfaz_proyectos>(this.apiUrl + 'proyectos/', proyecto); 
+   }
+
+
 }

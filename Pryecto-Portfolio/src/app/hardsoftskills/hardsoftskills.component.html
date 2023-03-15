@@ -1,10 +1,12 @@
- <section *ngIf="!editando" class="container d-flex justify-content-between" style = " overflow-y: scroll; scrollbar-width: none; height: 85vh; width: 80%; margin: auto;" class="banner">  
+ <section *ngIf="!editando && !agregando" class="container d-flex justify-content-between" style = " overflow-y: scroll; scrollbar-width: none; height: 85vh; width: 85%; margin: auto;" class="banner">  
    <div  >
-     <div class="encabezadoex m-4"><h2 class="mb-5">Hard & Soft Skills</h2>
+     <div class="encabezadoex m-4 d-flex flex-row">
+      <h2 class="mb-5">Hard & Soft Skills</h2>
+      <i class="fa fa-circle-plus mx-3 pt-1" style="font-size: 1.5rem; cursor: pointer;" (click)="openNewForm()"></i>
    </div>
 
     <div *ngFor = "let item of dataSkill" class="d-inline-block">
-    <div class="border border-danger m-2 d-flex" >
+    <div class="border border-danger m-2 " >
      
     <circle-progress
       [percent]="item.porcentaje"
@@ -60,5 +62,30 @@
 
     <button type="submit" class="btn btn-primary my-2 ">Guardar</button>
     <button type="button" (click)="cancelEdition()" class="btn btn-secondary mx-2">Cancelar</button>
+  </div>
+</form>
+
+<form  #formulario="ngForm" *ngIf="agregando" (submit)="agregarSkill()" class="card card mb-5 mt-5 rounded-1 col-sm-8 col-md-8" style="overflow-y: scroll; scrollbar-width: none; height: 70vh; width: 80%; margin: auto; max-width: 640px; background-color: rgba(244, 234, 234, 0.621);">
+  <div class="card-body">
+    <div class="form-group">
+      <label for="Skill">Skill</label>
+      <input type="text" [(ngModel)]="skillNueva.subtitulo" name="Skill" id="Skill" class="form-control" required>
+    </div>
+    <div class="form-group">
+      <label for="porcentaje">Porcentaje</label>
+      <input type="number" [(ngModel)]="skillNueva.porcentaje" name="porcentaje" id="porcentaje" class="form-control" required>
+    </div>
+    <div class="form-group">
+      <label for="color_inner">Color Interior</label>
+      <input type="text" [(ngModel)]="skillNueva.color_inner" name="color_inner" id="color_inner" class="form-control">
+    </div>
+    <div class="form-group">
+      <label for="color_outer">Color Exterior</label>
+      <input type="text" [(ngModel)]="skillNueva.color_outer" name="color_outer" id="color_outer" class="form-control" required>
+    </div>
+    
+
+    <button type="submit" class="btn btn-primary my-2 ">Guardar</button>
+    <button type="button" (click)="cancelNew()" class="btn btn-secondary mx-2">Cancelar</button>
   </div>
 </form>

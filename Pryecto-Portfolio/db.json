@@ -13,7 +13,7 @@
       "nombre": "Jorge Orlando",
       "apellido": "Chamorro",
       "url_foto": "./assets/jorge.png",
-      "sobre_mi": "Algo sobre mi, agregando\n",
+      "sobre_mi": "Algo sobre mi, agregando una parte\n\n",
       "correo": "jorgeorlandochamorro@gmail.com"
     }
   ],
@@ -37,16 +37,67 @@
       "url_titulo": "www.l.com",
       "descripcion": "Descripcion",
       "id_persona": "1"
+    },
+    {
+      "id": 3,
+      "institucion": "Escuela primaria",
+      "titulo": "Full Stack Developer angular",
+      "fecha_inicio": "8",
+      "fecha_final": "234234",
+      "url_titulo": "adasdasdas",
+      "descripcion": "A ver cual cambia",
+      "id_persona": 1
+    },
+    {
+      "id": 4,
+      "institucion": "78",
+      "titulo": "678",
+      "fecha_inicio": "67867",
+      "fecha_final": "678678",
+      "url_titulo": "6786",
+      "descripcion": "678678",
+      "id_persona": 1
+    },
+    {
+      "id": 5,
+      "institucion": "Otra institucion",
+      "titulo": "23",
+      "fecha_inicio": "234",
+      "fecha_final": "234",
+      "url_titulo": "343",
+      "descripcion": "678678",
+      "id_persona": 1
+    },
+    {
+      "id": 6,
+      "institucion": "Otra institucion 8 (modificada)",
+      "titulo": "23",
+      "fecha_inicio": "234",
+      "fecha_final": "234",
+      "url_titulo": "343",
+      "descripcion": "678678",
+      "id_persona": 1
+    },
+    {
+      "id": 7,
+      "institucion": "Escuela primaria dddd",
+      "titulo": "fghjgfhj",
+      "fecha_inicio": "gjhgfhj",
+      "fecha_final": "gfhjghj",
+      "url_titulo": "gjghj",
+      "descripcion": "gfhjghj",
+      "id_persona": 1
     }
   ],
   "experiencia": [
     {
       "id": 1,
-      "skill": "Html",
-      "porcentaje": 30,
-      "subtitulo": "JAVA",
-      "color_inner": "green",
-      "color_outer": "yellow",
+      "empresa": "empresa de prueba",
+      "url_foto_empresa": "../assets/Logo_microsoft.jpg",
+      "descripcion": "Nada que ver",
+      "trabajo_actual": "1",
+      "fecha_inicio": "2022-01-01",
+      "fecha_final": "2023-03-25",
       "id_persona": "1"
     },
     {
@@ -61,13 +112,33 @@
     },
     {
       "id": 3,
-      "empresa": "empresa de prueba",
+      "empresa": "Pollos hermanos",
+      "url_foto_empresa": "",
+      "descripcion": "la de hall",
+      "trabajo_actual": false,
+      "fecha_inicio": "hoy",
+      "fecha_final": "mañana",
+      "id_persona": 1
+    },
+    {
+      "id": 4,
+      "empresa": "asdasd",
+      "url_foto_empresa": "",
+      "descripcion": "adsasd",
+      "trabajo_actual": false,
+      "fecha_inicio": "asdsd",
+      "fecha_final": "asdasd",
+      "id_persona": 1
+    },
+    {
+      "id": 5,
+      "empresa": null,
       "url_foto_empresa": "../assets/Logo_microsoft.jpg",
-      "descripcion": "ultima pruebilla",
-      "trabajo_actual": "1",
-      "fecha_inicio": "2022-01-01",
-      "fecha_final": "2023-03-25",
-      "id_persona": "1"
+      "descripcion": null,
+      "trabajo_actual": false,
+      "fecha_inicio": null,
+      "fecha_final": null,
+      "id_persona": 1
     }
   ],
   "hyss": [
@@ -88,6 +159,24 @@
       "color_inner": "cyan",
       "color_outer": "red",
       "id_persona": "1"
+    },
+    {
+      "id": 3,
+      "skill": "",
+      "porcentaje": 55,
+      "subtitulo": "ANGULAR",
+      "color_inner": "cyan",
+      "color_outer": "blue",
+      "id_persona": 1
+    },
+    {
+      "id": 4,
+      "skill": "",
+      "porcentaje": 70,
+      "subtitulo": "HTML",
+      "color_inner": "pink",
+      "color_outer": "red",
+      "id_persona": 1
     }
   ],
   "proyectos": [
@@ -114,6 +203,30 @@
       "url_foto_proyecto": "../assets/proyectoimagen3.jpg",
       "url_direccion_proyecto": "url_direccion_proyecto",
       "id_persona": "1"
+    },
+    {
+      "id": 4,
+      "nombre_proyecto": "Comercio electronico",
+      "descripcion_proyecto": "Una prueba",
+      "url_foto_proyecto": "../assets/Proyectoimagen2.jpg",
+      "url_direccion_proyecto": "www.hola.com",
+      "id_persona": 1
+    },
+    {
+      "id": 5,
+      "nombre_proyecto": "otro proyecto",
+      "descripcion_proyecto": "jfdljdfalsjfdalsjdfsldfjñsldfjasñdlfjañsldfjñlsdfjñsldfjañsldfjañsldfjañsldkfjañsldfjñsldfj",
+      "url_foto_proyecto": "../assets/proyectoimagen.jpg",
+      "url_direccion_proyecto": "asasd",
+      "id_persona": 1
+    },
+    {
+      "id": 6,
+      "nombre_proyecto": "wetrwerwe",
+      "descripcion_proyecto": "fghfdhgdfgh",
+      "url_foto_proyecto": "../assets/Proyectoimagen2.jpg",
+      "url_direccion_proyecto": "www.chau.com",
+      "id_persona": 1
     }
   ]
 }
