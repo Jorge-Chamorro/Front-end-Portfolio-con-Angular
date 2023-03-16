@@ -51,8 +51,8 @@ export class DataServiceService {
    return this.http.put<Interfaz_persona> (this.apiUrl + 'persona/' + usuarioId, persona);
   }
 
-  guardarEducacion(educacion: Interfaz_educacion, idEducacion:number): Observable<Interfaz_educacion> {
-   return this.http.put<Interfaz_educacion> (this.apiUrl + 'educacion/' + idEducacion, educacion); 
+  guardarEducacion(educacion: Interfaz_educacion): Observable<Interfaz_educacion> {
+   return this.http.put<Interfaz_educacion> (this.apiUrl + 'educacion/' + educacion.id, educacion); 
   }
         
   guardarExperiencia(experiencia: Interfaz_experiencia, idExperiencia:number): Observable<Interfaz_experiencia> {
@@ -85,6 +85,10 @@ export class DataServiceService {
    agregarProyecto(proyecto: Interfaz_proyectos): Observable<Interfaz_proyectos> {
     return this.http.post<Interfaz_proyectos>(this.apiUrl + 'proyectos/', proyecto); 
    }
+
+   deleteEducacion(idABorrar:number): Observable<Interfaz_educacion>{
+    return this.http.delete<Interfaz_educacion>(this.apiUrl + 'educacion/' + idABorrar)
+  }
 
 
 }

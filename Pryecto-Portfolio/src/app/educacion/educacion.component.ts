@@ -17,7 +17,16 @@ export class EducacionComponent implements OnInit {
   dataEducacion:Interfaz_educacion[] = [];
   editando = false;
   agregando = false;
-  itemAModificar:number = 0;
+  itemAModificar:Interfaz_educacion = {
+    id: 1,
+    institucion: '',
+    titulo: '',
+    fecha_inicio: '',
+    fecha_final: '',
+    url_titulo: '',
+    descripcion: '',
+    id_persona: 1
+    }
   educacionNueva:Interfaz_educacion = {
     id: 1,
     institucion: '',
@@ -41,14 +50,14 @@ export class EducacionComponent implements OnInit {
   }
 
 
-  openEditForm(item:number) {
+  openEditForm(item:Interfaz_educacion) {
     this.itemAModificar = item;
     this.editando = true;
     console.log( "El item que paso es el: " + item)
   }
 
   guardarEducacion( ) {
-    this.dataService.guardarEducacion(this.dataEducacion[this.itemAModificar - 1], this.itemAModificar).subscribe();
+    this.dataService.guardarEducacion(this.itemAModificar).subscribe();
     this.editando = false;
     
 
@@ -81,6 +90,15 @@ export class EducacionComponent implements OnInit {
          this.agregando = false;
              }
       )
+  }
+
+ 
+
+  deleteEducacion(idABorrar:number) {
+    this.dataService.deleteEducacion(idABorrar).subscribe(
+      () => this.dataEducacion = this.dataEducacion.filter( t => t.id !== idABorrar)
+    )
+
   }
 
 }

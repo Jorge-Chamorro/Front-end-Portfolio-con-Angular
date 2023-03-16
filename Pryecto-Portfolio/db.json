@@ -40,52 +40,12 @@
     },
     {
       "id": 3,
-      "institucion": "Escuela primaria",
-      "titulo": "Full Stack Developer angular",
-      "fecha_inicio": "8",
-      "fecha_final": "234234",
-      "url_titulo": "adasdasdas",
-      "descripcion": "A ver cual cambia",
-      "id_persona": 1
-    },
-    {
-      "id": 4,
-      "institucion": "78",
-      "titulo": "678",
-      "fecha_inicio": "67867",
-      "fecha_final": "678678",
+      "institucion": "Nueva78",
+      "titulo": "Nueva678",
+      "fecha_inicio": "ayer",
+      "fecha_final": "hoy",
       "url_titulo": "6786",
-      "descripcion": "678678",
-      "id_persona": 1
-    },
-    {
-      "id": 5,
-      "institucion": "Otra institucion",
-      "titulo": "23",
-      "fecha_inicio": "234",
-      "fecha_final": "234",
-      "url_titulo": "343",
-      "descripcion": "678678",
-      "id_persona": 1
-    },
-    {
-      "id": 6,
-      "institucion": "Otra institucion 8 (modificada)",
-      "titulo": "23",
-      "fecha_inicio": "234",
-      "fecha_final": "234",
-      "url_titulo": "343",
-      "descripcion": "678678",
-      "id_persona": 1
-    },
-    {
-      "id": 7,
-      "institucion": "Escuela primaria dddd",
-      "titulo": "fghjgfhj",
-      "fecha_inicio": "gjhgfhj",
-      "fecha_final": "gfhjghj",
-      "url_titulo": "gjghj",
-      "descripcion": "gfhjghj",
+      "descripcion": "Una descripcion ",
       "id_persona": 1
     }
   ],
