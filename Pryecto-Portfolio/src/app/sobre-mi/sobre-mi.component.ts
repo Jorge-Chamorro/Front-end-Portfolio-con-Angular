@@ -9,7 +9,15 @@ import { Interfaz_persona } from '../interfaces/Interfaz_persona';
 })
 export class SobreMiComponent implements OnInit {
 
-  dataUser: Interfaz_persona[] = [];
+  dataUser: Interfaz_persona = {
+    id: 0,
+    nombre: "",
+    apellido: "",
+    url_foto: "",
+    sobre_mi: "",
+    correo: ""
+  };
+
   editando = false;
   idUser: number = 2;
 
@@ -22,6 +30,8 @@ export class SobreMiComponent implements OnInit {
     console.log(this.dataUser);
   }
 
+
+
   openEditForm() {
     this.editando = true;
   }
@@ -31,7 +41,7 @@ export class SobreMiComponent implements OnInit {
   }
 
   guardarPersona() {
-    this.dataService.guardarPersona(this.dataUser[this.idUser - 1], this.idUser).subscribe();
+    this.dataService.guardarPersona(this.dataUser).subscribe();
     this.editando = false;
   }
 

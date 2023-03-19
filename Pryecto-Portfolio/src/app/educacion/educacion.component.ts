@@ -94,9 +94,9 @@ export class EducacionComponent implements OnInit {
 
  
 
-  deleteEducacion(idABorrar:number) {
-    this.dataService.deleteEducacion(idABorrar).subscribe(
-      () => this.dataEducacion = this.dataEducacion.filter( t => t.id !== idABorrar)
+  deleteEducacion() {
+    this.dataService.deleteEducacion().subscribe(
+      
     )
 
   }

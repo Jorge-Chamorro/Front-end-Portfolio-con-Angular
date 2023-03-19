@@ -21,7 +21,6 @@ export class ExperienciaComponent implements OnInit {
     empresa: '',
     url_foto_empresa: '',
     descripcion: '',
-    trabajo_actual: false,
     fecha_inicio: '',
     fecha_final: '',
     id_persona: 1
@@ -34,7 +33,7 @@ export class ExperienciaComponent implements OnInit {
     this.dataService.getexperiencia().subscribe( data => this.dataExperiencia = data)
   }
 
-  openEditForm(item:number) {
+  openEditForm(item:number ) {
     this.itemAModificar = item;
     this.editando = true;
     console.log( "El item que paso es el: " + item)
