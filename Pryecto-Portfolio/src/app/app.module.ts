@@ -19,6 +19,8 @@ import { HardsoftskillsComponent } from './hardsoftskills/hardsoftskills.compone
 import { ProyectosComponent } from './proyectos/proyectos.component';
 import { HttpClientModule } from '@angular/common/http';
 import { NgCircleProgressModule } from 'ng-circle-progress';
+import { LoginComponent } from './login/login.component';
+
 
 @NgModule({
   declarations: [
@@ -31,6 +33,7 @@ import { NgCircleProgressModule } from 'ng-circle-progress';
     ExperienciaComponent,
     HardsoftskillsComponent,
     ProyectosComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule, 

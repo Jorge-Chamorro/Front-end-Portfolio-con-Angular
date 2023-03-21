@@ -8,6 +8,7 @@ import { EducacionComponent } from './educacion/educacion.component';
 import { ExperienciaComponent } from './experiencia/experiencia.component';
 import { HardsoftskillsComponent } from './hardsoftskills/hardsoftskills.component';
 import { ProyectosComponent } from './proyectos/proyectos.component';
+import { LoginComponent } from './login/login.component';
 
 
 const routes: Routes = 
@@ -17,7 +18,8 @@ const routes: Routes =
     { path: 'route3', component: EducacionComponent },
     { path: 'route4', component: ExperienciaComponent }, 
     { path: 'route5', component: HardsoftskillsComponent },
-    { path: 'route6', component: ProyectosComponent }
+    { path: 'route6', component: ProyectosComponent },
+    { path: 'login',  component: LoginComponent}
   ]
 
 

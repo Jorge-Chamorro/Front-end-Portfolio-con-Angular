@@ -11,7 +11,7 @@
        {{ item.institucion}}
       </div>
       <i class="fa fa-pencil position-absolute top-0 end-0 m-2 d-inline-block " style="font-size: 1.5rem; cursor: pointer;" (click)="openEditForm(item)" aria-hidden="true"></i>
-      <i class="fa fa-circle-minus position-absolute top-0 start-100 m-2 d-inline-block" style="color: red; font-size: 1.5rem; cursor: pointer;" (click)="deleteEducacion()"></i>
+      <i class="fa fa-circle-minus position-absolute top-0 start-100 m-2 d-inline-block" style="color: red; font-size: 1.5rem; cursor: pointer;" (click)="deleteEducacion(item)"></i>
        <div class="card-body">
          <h5 class="card-title">{{ item.titulo}}</h5>
          <p class="card-text">Curse la carrera desde {{ item.fecha_inicio }} hasta {{ item.fecha_final}}.</p>

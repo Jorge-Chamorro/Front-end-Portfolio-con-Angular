@@ -2,7 +2,7 @@
       <section class = "d-flex justify-content-center" >
       
         <div *ngIf="!editando" class = "card mb-5 mt-5 rounded-1 col-sm-8 col-md-8" style="max-width: 640px; background-color: rgba(105, 105, 105, 0.442);">
-          <i class="fa fa-pencil position-absolute top-0 end-0 m-3" style="font-size: 1.5rem; cursor: pointer;" (click)="openEditForm()" aria-hidden="true"></i>
+          <i *ngIf="isLogged" class="fa fa-pencil position-absolute top-0 end-0 m-3" style="font-size: 1.5rem; cursor: pointer;" (click)="openEditForm()" aria-hidden="true"></i>
           <div class = "row g-0"> 
             <div class = "col-sm-4 col-md-4 mt-0 mb-0">
               <img [src] = "dataUser.url_foto" class="img-fluid rounded-start" alt="...">

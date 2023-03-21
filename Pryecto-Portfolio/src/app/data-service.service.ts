@@ -33,7 +33,7 @@ export class DataServiceService {
   
   }
   geteducacion(): Observable<Interfaz_educacion[]> {
-    return this.http.get<Interfaz_educacion[]> (this.apiUrlVieja + 'educacion');
+    return this.http.get<Interfaz_educacion[]> (this.apiUrl + 'educacion/get');
   
   }
 
@@ -54,7 +54,9 @@ export class DataServiceService {
    }
 
   guardarEducacion(educacion: Interfaz_educacion): Observable<Interfaz_educacion> {
-   return this.http.put<Interfaz_educacion> (this.apiUrlVieja + 'educacion/' + educacion.id, educacion); 
+    console.log(JSON.stringify(educacion));
+    return this.http.put<Interfaz_educacion> (this.apiUrl + 'educacion/put/' + educacion.id, educacion); 
+  
   }
         
   guardarExperiencia(experiencia: Interfaz_experiencia, idExperiencia:number): Observable<Interfaz_experiencia> {
@@ -72,7 +74,7 @@ export class DataServiceService {
 
    
    agregarEducacion(educacion: Interfaz_educacion): Observable<Interfaz_educacion> {
-    return this.http.post<Interfaz_educacion>(this.apiUrlVieja + 'educacion/', educacion); 
+    return this.http.post<Interfaz_educacion>(this.apiUrl + 'educacion/post', educacion); 
    }
 
 
@@ -88,8 +90,8 @@ export class DataServiceService {
     return this.http.post<Interfaz_proyectos>(this.apiUrlVieja + 'proyectos/', proyecto); 
    }
 
-   deleteEducacion(): Observable<Interfaz_educacion>{
-    return this.http.delete<Interfaz_educacion>(this.apiUrlVieja + 'educacion/')
+   deleteEducacion(educacion: Interfaz_educacion): Observable<Interfaz_educacion>{
+    return this.http.delete<Interfaz_educacion>(this.apiUrl + 'educacion/delete/'+ educacion.id)
   }
 
 
