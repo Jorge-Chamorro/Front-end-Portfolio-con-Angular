@@ -5,5 +5,4 @@ export interface Interfaz_experiencia {
     descripcion: string;
     fecha_inicio: string;
     fecha_final: string;
-    id_persona: number;
-}
+   }

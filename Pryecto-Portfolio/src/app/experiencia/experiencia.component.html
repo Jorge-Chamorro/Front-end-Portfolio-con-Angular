@@ -13,7 +13,8 @@
           <div class="">
             <img [src] = "item.url_foto_empresa" class="img-fluid rounded-start" alt="...">
           </div>
-          <i class="fa fa-pencil position-absolute top-0 end-0 m-3" style="font-size: 1.5rem; cursor: pointer;" (click)="openEditForm(item.id)" aria-hidden="true"></i>
+          <i class="fa fa-pencil position-absolute top-0 end-0 m-3" style="font-size: 1.5rem; cursor: pointer;" (click)="openEditForm(item)" aria-hidden="true"></i>
+          <i class="fa fa-circle-minus position-absolute top-0 start-100 m-2 d-inline-block" style="color: red; font-size: 1.5rem; cursor: pointer;" (click)="deleteExperiencia(item)"></i>
           <div class="">
             <div class="card-body">
               <h5 class="card-title">{{ item.empresa }} </h5>
@@ -34,23 +35,23 @@
   <div class="card-body">
     <div class="form-group">
       <label for="empresa">Empresa</label>
-      <input type="text" [(ngModel)]="dataExperiencia[itemAModificar - 1].empresa" name="empresa" id="empresa" class="form-control" required>
+      <input type="text" [(ngModel)]="itemAModificar.empresa" name="empresa" id="empresa" class="form-control" required>
     </div>
     <div class="form-group">
       <label for="descripcion">Descripcion</label>
-      <input type="text" [(ngModel)]="dataExperiencia[itemAModificar- 1].descripcion" name="descripcion" id="descripcion" class="form-control" required>
+      <input type="text" [(ngModel)]="itemAModificar.descripcion" name="descripcion" id="descripcion" class="form-control" required>
     </div>
     <div class="form-group">
       <label for="url_foto_empresa">Url del Logo de la Empresa</label>
-      <input type="text" [(ngModel)]="dataExperiencia[itemAModificar - 1].url_foto_empresa" name="url_foto_empresa" id="url_foto_empresa" class="form-control">
+      <input type="text" [(ngModel)]="itemAModificar.url_foto_empresa" name="url_foto_empresa" id="url_foto_empresa" class="form-control">
     </div>
     <div class="form-group">
       <label for="fecha_inicio">Fecha Comienzo</label>
-      <textarea [(ngModel)]="dataExperiencia[itemAModificar - 1].fecha_inicio" name="fecha_inicio" id="fecha_inicio" class="form-control" rows="5"></textarea>
+      <textarea [(ngModel)]="itemAModificar.fecha_inicio" name="fecha_inicio" id="fecha_inicio" class="form-control" rows="5"></textarea>
     </div>
     <div class="form-group">
       <label for="fecha_final">Fecha de Finalizacion</label>
-      <textarea [(ngModel)]="dataExperiencia[itemAModificar - 1].fecha_final" name="fecha_final" id="fecha_final" class="form-control" rows="5"></textarea>
+      <textarea [(ngModel)]="itemAModificar.fecha_final" name="fecha_final" id="fecha_final" class="form-control" rows="5"></textarea>
     </div>
 
    

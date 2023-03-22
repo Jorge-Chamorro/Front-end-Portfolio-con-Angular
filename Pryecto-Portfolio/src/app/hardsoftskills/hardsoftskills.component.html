@@ -8,6 +8,10 @@
     <div *ngFor = "let item of dataSkill" class="d-inline-block">
     <div class="border border-danger m-2 " >
      
+     
+      <!-- [percent]="item.porcentaje" -->
+    
+    
     <circle-progress
       [percent]="item.porcentaje"
       [radius]="100"
@@ -29,12 +33,12 @@
       >
     </circle-progress>
     <span class=" top-0 end-0 m-2">
-      <i class="fa fa-pencil" style="font-size: 1.5rem; cursor: pointer;" (click)="openEditForm(item.id)" aria-hidden="true"></i>
-     
-   
+      <i class="fa fa-pencil" style="font-size: 1.5rem; cursor: pointer;" (click)="openEditForm(item)" aria-hidden="true"></i>
     </span>
-
-     </div>
+    <span class="top-100 end-100 ">
+     <i class="fa fa-circle-minus top-0 start-100 m-2 d-inline-block" style="color: red; font-size: 1.5rem; cursor: pointer;" (click)="deleteSkill(item)"></i>
+    </span>
+    </div>
     </div>
    </div>
 
@@ -44,19 +48,19 @@
   <div class="card-body">
     <div class="form-group">
       <label for="Skill">Skill</label>
-      <input type="text" [(ngModel)]="dataSkill[itemAModificar - 1].subtitulo" name="Skill" id="Skill" class="form-control" required>
+      <input type="text" [(ngModel)]="itemAModificar.subtitulo" name="Skill" id="Skill" class="form-control" required>
     </div>
     <div class="form-group">
       <label for="porcentaje">Porcentaje</label>
-      <input type="number" [(ngModel)]="dataSkill[itemAModificar- 1].porcentaje" name="porcentaje" id="porcentaje" class="form-control" required>
+      <input type="number" [(ngModel)]="itemAModificar.porcentaje" name="porcentaje" id="porcentaje" class="form-control" required>
     </div>
     <div class="form-group">
       <label for="color_inner">Color Interior</label>
-      <input type="text" [(ngModel)]="dataSkill[itemAModificar - 1].color_inner" name="color_inner" id="color_inner" class="form-control">
+      <input type="text" [(ngModel)]="itemAModificar.color_inner" name="color_inner" id="color_inner" class="form-control">
     </div>
     <div class="form-group">
       <label for="color_outer">Color Exterior</label>
-      <input type="text" [(ngModel)]="dataSkill[itemAModificar - 1].color_outer" name="color_outer" id="color_outer" class="form-control" required>
+      <input type="text" [(ngModel)]="itemAModificar.color_outer" name="color_outer" id="color_outer" class="form-control" required>
     </div>
     
 

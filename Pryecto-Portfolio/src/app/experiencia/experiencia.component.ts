@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { DataServiceService } from '../data-service.service';
 import { Interfaz_experiencia } from '../interfaces/Interfaz_experiencia';
 import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-experiencia',
@@ -15,32 +16,37 @@ export class ExperienciaComponent implements OnInit {
   dataExperiencia: Interfaz_experiencia[]=[];
   editando = false;
   agregando = false;
-  itemAModificar:number = 0;
+  itemAModificar: Interfaz_experiencia = {
+    id: 0,
+    empresa: '',
+    url_foto_empresa: '',
+    descripcion: '',
+    fecha_inicio: '',
+    fecha_final: ''
+  }
   experienciaNueva: Interfaz_experiencia = {
     id: 0,
     empresa: '',
     url_foto_empresa: '',
     descripcion: '',
     fecha_inicio: '',
-    fecha_final: '',
-    id_persona: 1
+    fecha_final: ''
   }
-  ultimoId:number = 1;
+  
 
-  constructor( private dataService: DataServiceService) { }
+  constructor( private dataService: DataServiceService, private router: Router) { }
 
   ngOnInit(): void {
     this.dataService.getexperiencia().subscribe( data => this.dataExperiencia = data)
   }
 
-  openEditForm(item:number ) {
+  openEditForm(item:Interfaz_experiencia ) {
     this.itemAModificar = item;
     this.editando = true;
-    console.log( "El item que paso es el: " + item)
   }
 
   guardarExperiencia( ) {
-    this.dataService.guardarExperiencia(this.dataExperiencia[this.itemAModificar - 1], this.itemAModificar).subscribe();
+    this.dataService.guardarExperiencia(this.itemAModificar).subscribe();
     this.editando = false;
     
 
@@ -59,23 +65,30 @@ export class ExperienciaComponent implements OnInit {
   }
   
   agregarExperiencia() {
-    this.ultimoId = this.dataExperiencia.length + 1;
-    console.log("el id a agregar seria:" + this.ultimoId);
-    this.experienciaNueva.id = this.ultimoId;
-    console.log ("educacion a agregar" + this.experienciaNueva);
+   
+       this.dataService.agregarExperiencia(this.experienciaNueva).subscribe(
+       () => {
 
-      this.dataService.agregarExperiencia(this.experienciaNueva).subscribe(
-       registro => {
-
-         this.dataExperiencia.push(registro);
-         console.log("array en la base de datos:" + this.dataExperiencia);
+         this.dataService.getexperiencia().subscribe(data => this.dataExperiencia = data);
+         
          this.formulario.reset();
          this.agregando = false;
+         this.router.navigate(['route4']);
              }
       )
   }
 
-
+  deleteExperiencia(experiencia: Interfaz_experiencia) {
+    this.dataService.deleteExperiencia(experiencia).subscribe(
+      () => {
+        const index = this.dataExperiencia.findIndex(e => e.id ===  experiencia.id);
+        this.dataExperiencia.splice(index, 1);
+      },
+      error => {
+        console.log("error al eliminar el registro", error);
+      }
+    )
+  }
 
 
 

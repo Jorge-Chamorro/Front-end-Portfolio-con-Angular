@@ -37,7 +37,7 @@ export class EducacionComponent implements OnInit {
     descripcion: ''
     }
 
-    ultimoId:number = 2;
+    
 
 
   constructor( private dataService: DataServiceService, private router: Router) {   }
@@ -52,7 +52,6 @@ export class EducacionComponent implements OnInit {
   openEditForm(item:Interfaz_educacion) {
     this.itemAModificar = item;
     this.editando = true;
-    console.log( "El item que paso es el: " + item)
   }
 
   guardarEducacion() {
@@ -74,25 +73,17 @@ export class EducacionComponent implements OnInit {
   }
 
   agregarEducacion() {
-    // this.ultimoId = this.dataEducacion.length + 1;
-    // console.log("el id a agregar seria:" + this.ultimoId);
-    // this.educacionNueva.id = this.ultimoId;
-    // console.log ("educacion a agregar" + this.educacionNueva);
-
-      this.dataService.agregarEducacion(this.educacionNueva).subscribe(
+       console.log("envio este objeto:" + JSON.stringify(this.educacionNueva));
+       this.dataService.agregarEducacion(this.educacionNueva).subscribe(
        () => {
         this.dataService.geteducacion().subscribe(data => this.dataEducacion = data);
-        // registro => {
-        //  console.log(JSON.stringify(registro));
-         
-
-        //  this.dataEducacion.push(registro);
+        
          console.log("array en la base de datos:" + JSON.stringify(this.dataEducacion));
          this.formulario.reset();
          this.agregando = false;
          this.router.navigate(['route3']);
              }
-      )
+       )
   }
 
  

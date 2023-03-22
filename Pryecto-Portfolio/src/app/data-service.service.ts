@@ -38,20 +38,20 @@ export class DataServiceService {
   }
 
   getexperiencia(): Observable<Interfaz_experiencia[]> {
-    return this.http.get<Interfaz_experiencia[]> (this.apiUrlVieja + 'experiencia')
+    return this.http.get<Interfaz_experiencia[]> (this.apiUrl + 'experiencia/get')
   }
 
   gethyss(): Observable<Interfaz_hyss[]> {
-    return this.http.get<Interfaz_hyss[]> (this.apiUrlVieja + 'hyss')
+    return this.http.get<Interfaz_hyss[]> (this.apiUrl + 'hyss/get')
   }
 
   getproyectos(): Observable<Interfaz_proyectos[]> {
     return this.http.get<Interfaz_proyectos[]> (this.apiUrlVieja + 'proyectos')
   }  
 
-   guardarPersona(persona: Interfaz_persona): Observable<Interfaz_persona> {
+  guardarPersona(persona: Interfaz_persona): Observable<Interfaz_persona> {
     return this.http.put<Interfaz_persona> (this.apiUrl + 'personas/put/' + persona.id, persona);
-   }
+  }
 
   guardarEducacion(educacion: Interfaz_educacion): Observable<Interfaz_educacion> {
     console.log(JSON.stringify(educacion));
@@ -59,13 +59,13 @@ export class DataServiceService {
   
   }
         
-  guardarExperiencia(experiencia: Interfaz_experiencia, idExperiencia:number): Observable<Interfaz_experiencia> {
-    return this.http.put<Interfaz_experiencia> (this.apiUrlVieja + 'experiencia/' + idExperiencia, experiencia);
+  guardarExperiencia(experiencia: Interfaz_experiencia): Observable<Interfaz_experiencia> {
+    return this.http.put<Interfaz_experiencia> (this.apiUrl + 'experiencia/put/' + experiencia.id, experiencia);
    }
   
 
-  guardarSkill(skill: Interfaz_hyss, idSkill:number): Observable<Interfaz_hyss> {
-    return this.http.put<Interfaz_hyss> (this.apiUrlVieja + 'hyss/' + idSkill, skill);
+  guardarSkill(skill: Interfaz_hyss): Observable<Interfaz_hyss> {
+    return this.http.put<Interfaz_hyss> (this.apiUrl + 'hyss/put/' + skill.id, skill);
    }
 
   guardarProyecto(proyecto: Interfaz_proyectos, idProyecto:number): Observable<Interfaz_proyectos> {
@@ -79,11 +79,11 @@ export class DataServiceService {
 
 
    agregarExperiencia(experiencia: Interfaz_experiencia): Observable<Interfaz_experiencia> {
-    return this.http.post<Interfaz_experiencia>(this.apiUrlVieja + 'experiencia/', experiencia); 
+    return this.http.post<Interfaz_experiencia>(this.apiUrl + 'experiencia/post', experiencia); 
    }
 
    agregarSkill(skill: Interfaz_hyss): Observable<Interfaz_hyss> {
-    return this.http.post<Interfaz_hyss>(this.apiUrlVieja + 'hyss/', skill); 
+    return this.http.post<Interfaz_hyss>(this.apiUrl + 'hyss/post', skill); 
    }
 
    agregarProyecto(proyecto: Interfaz_proyectos): Observable<Interfaz_proyectos> {
@@ -92,7 +92,15 @@ export class DataServiceService {
 
    deleteEducacion(educacion: Interfaz_educacion): Observable<Interfaz_educacion>{
     return this.http.delete<Interfaz_educacion>(this.apiUrl + 'educacion/delete/'+ educacion.id)
-  }
+   }
+
+   deleteExperiencia(educacion: Interfaz_experiencia): Observable<Interfaz_experiencia>{
+    return this.http.delete<Interfaz_experiencia>(this.apiUrl + 'experiencia/delete/'+ educacion.id)
+   }
+
+   deleteSkill(skill: Interfaz_hyss): Observable<Interfaz_hyss>{
+    return this.http.delete<Interfaz_hyss>(this.apiUrl + 'hyss/delete/'+ skill.id)
+   }
 
 
 }

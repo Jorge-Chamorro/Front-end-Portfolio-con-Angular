@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { DataServiceService } from '../data-service.service';
 import { Interfaz_hyss } from '../interfaces/Interfaz_hyss';
 import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-hardsoftskills',
@@ -14,37 +15,42 @@ export class HardsoftskillsComponent implements OnInit {
   dataSkill: Interfaz_hyss[] = [];
   editando = false;
   agregando = false;
-  itemAModificar:number = 0;
-  skillNueva: Interfaz_hyss = {
-    id: 0,
-    skill: '',
+
+  itemAModificar: Interfaz_hyss = {
+  
     porcentaje: 0,
     subtitulo: '',
     color_inner: '',
-    color_outer: '',
-    id_persona: 1
+    color_outer: ''
   }
-  ultimoId:number = 1;
+
+  skillNueva: Interfaz_hyss = {
+    
+    porcentaje: 0,
+    subtitulo: '',
+    color_inner: '',
+    color_outer: ''
+  }
+
+  
 
 
-  constructor( private dataService : DataServiceService) { }
+  constructor( private dataService : DataServiceService, private router: Router) { }
 
   ngOnInit(): void {
-    this.dataService.gethyss().subscribe( data => this.dataSkill = data)
+    this.dataService.gethyss().subscribe(data => this.dataSkill = data)
   }
 
 
-  openEditForm(item:number) {
+  openEditForm(item:Interfaz_hyss) {
     this.itemAModificar = item;
     this.editando = true;
    
   }
 
   guardarSkill( ) {
-    this.dataService.guardarSkill(this.dataSkill[this.itemAModificar - 1], this.itemAModificar).subscribe();
+    this.dataService.guardarSkill(this.itemAModificar).subscribe();
     this.editando = false;
-    console.log( "estoy pasando el objeto: ", this.dataSkill[this.itemAModificar - 1], this.itemAModificar)
-
   }
 
   cancelEdition() {
@@ -60,21 +66,28 @@ export class HardsoftskillsComponent implements OnInit {
   }
 
   agregarSkill() {
-    this.ultimoId = this.dataSkill.length + 1;
-    console.log("el id a agregar seria:" + this.ultimoId);
-    this.skillNueva.id = this.ultimoId;
-    console.log ("educacion a agregar" + this.skillNueva);
+      console.log("El objeto que mando es: " + JSON.stringify(this.skillNueva));
+       this.dataService.agregarSkill(this.skillNueva).subscribe(
+       () => {
 
-      this.dataService.agregarSkill(this.skillNueva).subscribe(
-       registro => {
-
-         this.dataSkill.push(registro);
-         console.log("array en la base de datos:" + this.dataSkill);
+         this.dataService.gethyss().subscribe(data => this.dataSkill = data);
          this.formulario.reset();
          this.agregando = false;
+         this.router.navigate(['route5']);
              }
       )
   }
 
+  deleteSkill(skill: Interfaz_hyss) {
+    this.dataService.deleteSkill(skill).subscribe( 
+      () => {
+        const index = this.dataSkill.findIndex( e => e.id === skill.id);
+        this.dataSkill.splice(index, 1);
+        },
+        error => {
+          console.log("error al eliminar el registro", error);
+        }
+    )
+  }
 
 }
