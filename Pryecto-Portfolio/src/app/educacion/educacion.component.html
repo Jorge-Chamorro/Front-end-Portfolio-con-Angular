@@ -10,11 +10,11 @@
       <div class="card-header">
        {{ item.institucion}}
       </div>
-      <i class="fa fa-pencil position-absolute top-0 end-0 m-2 d-inline-block " style="font-size: 1.5rem; cursor: pointer;" (click)="openEditForm(item)" aria-hidden="true"></i>
-      <i class="fa fa-circle-minus position-absolute top-0 start-100 m-2 d-inline-block" style="color: red; font-size: 1.5rem; cursor: pointer;" (click)="deleteEducacion(item)"></i>
+      <i  *ngIf="isLoggedG" class="fa fa-pencil position-absolute top-0 end-0 m-2 d-inline-block " style="font-size: 1.5rem; cursor: pointer;" (click)="openEditForm(item)" aria-hidden="true"></i>
+      <i *ngIf="isLoggedG"  class="fa fa-circle-minus position-absolute top-0 start-100 m-2 d-inline-block" style="color: red; font-size: 1.5rem; cursor: pointer;" (click)="deleteEducacion(item)"></i>
        <div class="card-body">
          <h5 class="card-title">{{ item.titulo}}</h5>
-         <p class="card-text">Curse la carrera desde {{ item.fecha_inicio }} hasta {{ item.fecha_final}}.</p>
+         <p class="card-text">Curse la carrera desde {{ item.fecha_inicio | date: 'dd-MM-yyy' }} hasta {{ item.fecha_final | date: 'dd-MM-yyy' }}.</p>
          <a href="#" class="btn btn-primary">Ver Certificado</a>
        </div>
       <div class="card-footer text-muted">
@@ -36,27 +36,27 @@
   <div class="card-body">
     <div class="form-group">
       <label for="institucion">Institucion</label>
-      <input type="text" [(ngModel)]="itemAModificar.institucion" name="institucion" id="institucion" class="form-control" required>
+      <input type="text" maxlength="100" [(ngModel)]="itemAModificar.institucion" name="institucion" id="institucion" class="form-control" required>
     </div>
     <div class="form-group">
       <label for="titulo">Titulo</label>
-      <input type="text" [(ngModel)]="itemAModificar.titulo" name="titulo" id="titulo" class="form-control" required>
+      <input type="text" maxlength="100" [(ngModel)]="itemAModificar.titulo" name="titulo" id="titulo" class="form-control" required>
     </div>
     <div class="form-group">
       <label for="fecha_inicio">Fecha de inicio</label>
-      <input type="text" [(ngModel)]="itemAModificar.fecha_inicio" name="fecha_inicio" id="fecha_inicio" class="form-control">
+      <input type="date" [(ngModel)]="itemAModificar.fecha_inicio" name="fecha_inicio" id="fecha_inicio" class="form-control">
     </div>
-    <div class="form-group">
+    <div class="form-gr  oup">
       <label for="fecha_final">Fecha de Finalizacion</label>
-      <textarea [(ngModel)]="itemAModificar.fecha_final" name="fecha_final" id="fecha_final" class="form-control" rows="5"></textarea>
+      <input type="date" [(ngModel)]="itemAModificar.fecha_final" name="fecha_final" id="fecha_final" class="form-control" rows="5" required>
     </div>
     <div class="form-group">
       <label for="url_titulo">Url del Titulo</label>
-      <input type="text" [(ngModel)]="itemAModificar.url_titulo" name="url_titulo" id="url_titulo" class="form-control" required>
+      <input type="text" maxlength="300" [(ngModel)]="itemAModificar.url_titulo" name="url_titulo" id="url_titulo" class="form-control" required>
     </div>
     <div class="form-group">
       <label for="descripcion">Descripcion</label>
-      <input type="text" [(ngModel)]="itemAModificar.descripcion" name="descripcion" id="descripcion" class="form-control" required>
+      <textarea maxlength="300" rows="3" cols="30" [(ngModel)]="itemAModificar.descripcion" name="descripcion" id="descripcion" class="form-control" required></textarea>
     </div>
 
     <button type="submit" class="btn btn-primary my-2 ">Guardar</button>
@@ -77,11 +77,11 @@
     </div>
     <div class="form-group">
       <label for="fecha_inicio">Fecha de inicio</label>
-      <input type="text" [(ngModel)]="educacionNueva.fecha_inicio" name="fecha_inicio" id="fecha_inicio" class="form-control">
+      <input type="date" [(ngModel)]="educacionNueva.fecha_inicio" name="fecha_inicio" id="fecha_inicio" class="form-control">
     </div>
     <div class="form-group">
       <label for="fecha_final">Fecha de Finalizacion</label>
-      <textarea [(ngModel)]="educacionNueva.fecha_final" name="fecha_final" id="fecha_final" class="form-control" rows="5"></textarea>
+      <input type="date" [(ngModel)]="educacionNueva.fecha_final" name="fecha_final" id="fecha_final" class="form-control" rows="5" required>
     </div>
     <div class="form-group">
       <label for="url_titulo">Url del Titulo</label>
@@ -89,7 +89,7 @@
     </div>
     <div class="form-group">
       <label for="descripcion">Descripcion</label>
-      <input type="text" [(ngModel)]="educacionNueva.descripcion" name="descripcion" id="descripcion" class="form-control" required>
+      <textarea maxlength="300" rows="3" cols="30" [(ngModel)]="educacionNueva.descripcion" name="descripcion" id="descripcion" class="form-control" required></textarea>
     </div>
 
     <button type="submit" class="btn btn-primary my-2 ">Guardar</button>

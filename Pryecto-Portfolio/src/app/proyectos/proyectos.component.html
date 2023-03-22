@@ -1,9 +1,19 @@
-<section *ngIf="!editando && !agregando" style = "overflow-y: scroll; scrollbar-width: none; height: 85vh; width: 80%; margin: auto;" class="banner">
 
+
+
+<section *ngIf="!editando && !agregando" style = "overflow-y: scroll; scrollbar-width: none; height: 85vh; width: 80%; margin: auto;" class="banner">
+  <div class="contenedorCards " >
+    <div class="encabezadoex m-4 d-flex flex-row ">
+      <h2>Proyectos</h2>
+      <i class="fa fa-circle-plus mx-3 pt-1" style="font-size: 1.5rem; cursor: pointer;" (click)="openNewForm()"></i>
+    </div>
+ 
+ 
   <ngb-carousel>
     <ng-template ngbSlide *ngFor="let item of dataUser">
-      <i class="fa fa-circle-plus mx-3 pt-1 position-absolute top-0 start-0 m-3" style="z-index:50000000; font-size: 1.5rem; cursor: pointer;" (click)="openNewForm()"></i>
-      <i class="fa fa-pencil position-absolute top-0 end-0 mx-5 mt-3" style="z-index:50000000; font-size: 1.5rem; cursor: pointer;" (click)="openEditForm(item.id)" aria-hidden="true"></i>
+      <!-- <i class="fa fa-circle-plus mx-3 pt-1 position-absolute top-0 start-0 m-3" style="z-index:50000000; font-size: 1.5rem; cursor: pointer;" (click)="openNewForm()"></i> -->
+      <i *ngIf="isLoggedG" class="fa fa-pencil position-absolute top-0 end-0 mx-5 mt-3" style="z-index:50000000; font-size: 1.5rem; cursor: pointer;" (click)="openEditForm(item)" aria-hidden="true"></i>
+      <i *ngIf="isLoggedG" class="fa fa-circle-minus position-absolute top-0 start-0 m-2" style="z-index:50000000; color: red; font-size: 1.5rem; cursor: pointer;" (click)="deleteProyecto(item)"></i>
       <img [src]="item.url_foto_proyecto"  style="height: 500px; width: 100%"/>
       <div class="carousel-caption">
         <h3>{{ item.nombre_proyecto }}</h3>
@@ -14,26 +24,26 @@
 
     
   
-
+   </div>
   </section>
 
   <form  *ngIf="editando" (submit)="guardarProyecto()" class="card card mb-5 mt-5 rounded-1 col-sm-8 col-md-8" style="overflow-y: scroll; scrollbar-width: none; height: 70vh; width: 80%; margin: auto; max-width: 640px; background-color: rgba(244, 234, 234, 0.621);">
     <div class="card-body">
       <div class="form-group">
         <label for="nombre_proyecto">Proyecto</label>
-        <input type="text" [(ngModel)]="dataUser[itemAModificar - 1].nombre_proyecto" name="nombre_proyecto" id="nombre_proyecto" class="form-control" required>
+        <input type="text" maxlength="300"[(ngModel)]="itemAModificar.nombre_proyecto" name="nombre_proyecto" id="nombre_proyecto" class="form-control" required>
       </div>
       <div class="form-group">
         <label for="descripcion_proyecto">Descripcion</label>
-        <input type="text" [(ngModel)]="dataUser[itemAModificar- 1].descripcion_proyecto" name="descripcion_proyecto" id="descripcion_proyecto" class="form-control" required>
+      <textarea maxlength="100" rows="3" clos="30" [(ngModel)]="itemAModificar.descripcion_proyecto" name="descripcion_proyecto" id="descripcion_proyecto" class="form-control" required></textarea>
       </div>
       <div class="form-group">
         <label for="url_foto_proyecto">Url de la Foto del Proyecto</label>
-        <input type="text" [(ngModel)]="dataUser[itemAModificar - 1].url_foto_proyecto" name="url_foto_proyecto" id="url_foto_proyecto" class="form-control">
+        <input type="text" maxlength="300" [(ngModel)]="itemAModificar.url_foto_proyecto" name="url_foto_proyecto" id="url_foto_proyecto" class="form-control">
       </div>
       <div class="form-group">
         <label for="url_direccion_proyecto">Url del proyecto</label>
-        <input type="text" [(ngModel)]="dataUser[itemAModificar- 1].url_direccion_proyecto" name="url_direccion_proyecto" id="url_direccion_proyecto" class="form-control" required>
+        <input type="text" maxlength="300" [(ngModel)]="itemAModificar.url_direccion_proyecto" name="url_direccion_proyecto" id="url_direccion_proyecto" class="form-control" required>
             </div>
       
   
@@ -46,19 +56,19 @@
     <div class="card-body">
       <div class="form-group">
         <label for="nombre_proyecto">Proyecto</label>
-        <input type="text" [(ngModel)]="proyectoNuevo.nombre_proyecto" name="nombre_proyecto" id="nombre_proyecto" class="form-control" required>
+        <input type="text" maxlength="300" [(ngModel)]="proyectoNuevo.nombre_proyecto" name="nombre_proyecto" id="nombre_proyecto" class="form-control" required>
       </div>
       <div class="form-group">
         <label for="descripcion_proyecto">Descripcion</label>
-        <input type="text" [(ngModel)]="proyectoNuevo.descripcion_proyecto" name="descripcion_proyecto" id="descripcion_proyecto" class="form-control" required>
+        <textarea  maxlength="300" rows="3" cols="30" [(ngModel)]="proyectoNuevo.descripcion_proyecto" name="descripcion_proyecto" id="descripcion_proyecto" class="form-control" required></textarea>
       </div>
       <div class="form-group">
         <label for="url_foto_proyecto">Url de la Foto del Proyecto</label>
-        <input type="text" [(ngModel)]="proyectoNuevo.url_foto_proyecto" name="url_foto_proyecto" id="url_foto_proyecto" class="form-control">
+        <input type="text" maxlength="300" [(ngModel)]="proyectoNuevo.url_foto_proyecto" name="url_foto_proyecto" id="url_foto_proyecto" class="form-control">
       </div>
       <div class="form-group">
         <label for="url_direccion_proyecto">Url del proyecto</label>
-        <input type="text" [(ngModel)]="proyectoNuevo.url_direccion_proyecto" name="url_direccion_proyecto" id="url_direccion_proyecto" class="form-control" required>
+        <input type="text" maxlength="300" [(ngModel)]="proyectoNuevo.url_direccion_proyecto" name="url_direccion_proyecto" id="url_direccion_proyecto" class="form-control" required>
             </div>
       
   

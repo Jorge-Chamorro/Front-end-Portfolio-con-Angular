@@ -3,6 +3,7 @@ import { DataServiceService } from '../data-service.service';
 import { Interfaz_hyss } from '../interfaces/Interfaz_hyss';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
+import { LoginuserserviceService } from '../loginuserservice.service';
 
 @Component({
   selector: 'app-hardsoftskills',
@@ -32,13 +33,14 @@ export class HardsoftskillsComponent implements OnInit {
     color_outer: ''
   }
 
-  
+  isLoggedG: boolean = false;
 
 
-  constructor( private dataService : DataServiceService, private router: Router) { }
+  constructor( private dataService : DataServiceService, private router: Router, private loginService: LoginuserserviceService) { }
 
   ngOnInit(): void {
-    this.dataService.gethyss().subscribe(data => this.dataSkill = data)
+    this.dataService.gethyss().subscribe(data => this.dataSkill = data);
+    this.isLoggedG = this.loginService.getVariable();
   }
 
 
@@ -54,6 +56,7 @@ export class HardsoftskillsComponent implements OnInit {
   }
 
   cancelEdition() {
+    this.dataService.gethyss().subscribe(data => this.dataSkill = data)
     this.editando = false;
   }
 

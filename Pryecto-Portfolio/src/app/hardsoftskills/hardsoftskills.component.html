@@ -6,7 +6,9 @@
    </div>
 
     <div *ngFor = "let item of dataSkill" class="d-inline-block">
-    <div class="border border-danger m-2 " >
+    <!-- <div  class="border border-danger m-2 " > -->
+
+    <div class="mx-4">
      
      
       <!-- [percent]="item.porcentaje" -->
@@ -32,10 +34,10 @@
       [startFromZero]="true"
       >
     </circle-progress>
-    <span class=" top-0 end-0 m-2">
-      <i class="fa fa-pencil" style="font-size: 1.5rem; cursor: pointer;" (click)="openEditForm(item)" aria-hidden="true"></i>
+    <span *ngIf="isLoggedG" class=" top-0 end-0 m-2">
+      <i   class="fa fa-pencil" style="font-size: 1.5rem; cursor: pointer;" (click)="openEditForm(item)" aria-hidden="true"></i>
     </span>
-    <span class="top-100 end-100 ">
+    <span *ngIf="isLoggedG" class="top-100 end-100 ">
      <i class="fa fa-circle-minus top-0 start-100 m-2 d-inline-block" style="color: red; font-size: 1.5rem; cursor: pointer;" (click)="deleteSkill(item)"></i>
     </span>
     </div>
@@ -56,11 +58,33 @@
     </div>
     <div class="form-group">
       <label for="color_inner">Color Interior</label>
-      <input type="text" [(ngModel)]="itemAModificar.color_inner" name="color_inner" id="color_inner" class="form-control">
+      <!-- <input type="text" [(ngModel)]="itemAModificar.color_inner" name="color_inner" id="color_inner" class="form-control"> -->
+      <select [(ngModel)]="itemAModificar.color_inner" name="color_inner" id="color_inner" class="form-control">
+        <option value="orange">Naranja</option>
+        <option value="red">Rojo</option>
+        <option value="green">Verde</option>
+        <option value="blue">Azul</option>
+        <option value="yellow">Amarillo</option>
+        <option value="purple">Morado</option>
+        <option value="cyan">Cian</option>
+        <option value="pink">Rosa</option>
+        <option value="violet">Violeta</option>
+      </select>
     </div>
     <div class="form-group">
       <label for="color_outer">Color Exterior</label>
-      <input type="text" [(ngModel)]="itemAModificar.color_outer" name="color_outer" id="color_outer" class="form-control" required>
+      <!-- <input type="text" [(ngModel)]="itemAModificar.color_outer" name="color_outer" id="color_outer" class="form-control" required> -->
+      <select [(ngModel)]="itemAModificar.color_outer" name="color_outer" id="color_outer" class="form-control">
+        <option value="orange">Naranja</option>
+        <option value="red">Rojo</option>
+        <option value="green">Verde</option>
+        <option value="blue">Azul</option>
+        <option value="yellow">Amarillo</option>
+        <option value="purple">Morado</option>
+        <option value="cyan">Cian</option>
+        <option value="pink">Rosa</option>
+        <option value="violet">Violeta</option>
+      </select>
     </div>
     
 
@@ -81,11 +105,33 @@
     </div>
     <div class="form-group">
       <label for="color_inner">Color Interior</label>
-      <input type="text" [(ngModel)]="skillNueva.color_inner" name="color_inner" id="color_inner" class="form-control">
+      <!-- <input type="text" [(ngModel)]="skillNueva.color_inner" name="color_inner" id="color_inner" class="form-control"> -->
+      <select [(ngModel)]="skillNueva.color_inner" name="color_inner" id="color_inner" class="form-control">
+        <option value="orange">Naranja</option>
+        <option value="red">Rojo</option>
+        <option value="green">Verde</option>
+        <option value="blue">Azul</option>
+        <option value="yellow">Amarillo</option>
+        <option value="purple">Morado</option>
+        <option value="cyan">Cian</option>
+        <option value="pink">Rosa</option>
+        <option value="violet">Violeta</option>
+      </select>
     </div>
     <div class="form-group">
       <label for="color_outer">Color Exterior</label>
-      <input type="text" [(ngModel)]="skillNueva.color_outer" name="color_outer" id="color_outer" class="form-control" required>
+      <!-- <input type="text" [(ngModel)]="skillNueva.color_outer" name="color_outer" id="color_outer" class="form-control" required> -->
+      <select [(ngModel)]="skillNueva.color_outer" name="color_outer" id="color_outer" class="form-control">
+        <option value="orange">Naranja</option>
+        <option value="red">Rojo</option>
+        <option value="green">Verde</option>
+        <option value="blue">Azul</option>
+        <option value="yellow">Amarillo</option>
+        <option value="purple">Morado</option>
+        <option value="cyan">Cian</option>
+        <option value="pink">Rosa</option>
+        <option value="violet">Violeta</option>
+      </select>
     </div>
     
 

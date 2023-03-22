@@ -2,6 +2,8 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { DataServiceService } from '../data-service.service';
 import { Interfaz_proyectos } from '../interfaces/Interfaz_proyectos';
 import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
+import { LoginuserserviceService } from '../loginuserservice.service';
 
 
 
@@ -22,39 +24,43 @@ export class ProyectosComponent implements OnInit {
   dataUser: Interfaz_proyectos[] = [];
   editando = false;
   agregando = false;
-  itemAModificar:number = 0;
-  proyectoNuevo:Interfaz_proyectos = {
-    id: 0,
+  itemAModificar:Interfaz_proyectos = {
+    
     nombre_proyecto: '',
     descripcion_proyecto: '',
     url_foto_proyecto: '',
-    url_direccion_proyecto: '',
-    id_persona: 1
+    url_direccion_proyecto: ''
   }
-  ultimoId:number = 2;
+  proyectoNuevo:Interfaz_proyectos = {
+   
+    nombre_proyecto: '',
+    descripcion_proyecto: '',
+    url_foto_proyecto: '',
+    url_direccion_proyecto: ''
+  }
+  isLoggedG: boolean = false;
 
-  constructor( private dataService: DataServiceService) { }
+  constructor( private dataService: DataServiceService, private router:Router, private loginService: LoginuserserviceService) { }
 
   ngOnInit(): void {
 
     this.dataService.getproyectos().subscribe( data => this.dataUser = data);
-
+    this.isLoggedG = this.loginService.getVariable();
   }
 
-  openEditForm(item:number) {
+  openEditForm(item:Interfaz_proyectos) {
     this.itemAModificar = item;
     this.editando = true;
     console.log( "El item que paso es el: " + item)
   }
 
   guardarProyecto( ) {
-    this.dataService.guardarProyecto(this.dataUser[this.itemAModificar - 1], this.itemAModificar).subscribe();
+    this.dataService.guardarProyecto(this.itemAModificar).subscribe();
     this.editando = false;
-    console.log( "estoy pasando el objeto: ", this.dataUser[this.itemAModificar - 1], this.itemAModificar)
-
   }
 
   cancelEdition() {
+    this.dataService.getproyectos().subscribe( data => this.dataUser = data);
     this.editando = false;
   }
 
@@ -68,20 +74,31 @@ export class ProyectosComponent implements OnInit {
   }
 
   agregarProyecto() {
-    this.ultimoId = this.dataUser.length + 1;
-    console.log("el id a agregar seria:" + this.ultimoId);
-    this.proyectoNuevo.id = this.ultimoId;
-    console.log ("educacion a agregar" + this.proyectoNuevo);
+       this.dataService.agregarProyecto(this.proyectoNuevo).subscribe(
+       () => {
 
-      this.dataService.agregarProyecto(this.proyectoNuevo).subscribe(
-       registro => {
-
-         this.dataUser.push(registro);
+         this.dataService.getproyectos().subscribe(data => this.dataUser = data)
          console.log("array en la base de datos:" + this.dataUser);
          this.formulario.reset();
          this.agregando = false;
-             }
+         this.router.navigate(['route6']);
+       }
       )
+  }
+
+  deleteProyecto(proyecto: Interfaz_proyectos) {
+    console.log("Registro a eliminar: " + JSON.stringify(proyecto));
+    this.dataService.deleteProyecto(proyecto).subscribe( 
+      () => {
+        const index = this.dataUser.findIndex( e => e.id === proyecto.id);
+        this.dataUser.splice(index, 1);
+        },
+        error => {
+          console.log("error al eliminar el registro", error);
+        }
+      
+    )
+
   }
 
 }

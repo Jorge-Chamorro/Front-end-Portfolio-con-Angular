@@ -11,7 +11,7 @@ import { LoginuserserviceService } from '../loginuserservice.service';
 export class SobreMiComponent implements OnInit {
 
   dataUser: Interfaz_persona = {
-    id: 0,
+   
     nombre: "",
     apellido: "",
     url_foto: "",
@@ -46,6 +46,7 @@ export class SobreMiComponent implements OnInit {
   }
 
   guardarPersona() {
+    console.log("item a modificar= " + JSON.stringify(this.dataUser));
     this.dataService.guardarPersona(this.dataUser).subscribe();
     this.editando = false;
   }

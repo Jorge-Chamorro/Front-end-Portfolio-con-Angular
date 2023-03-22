@@ -1,5 +1,5 @@
 export interface Interfaz_persona {
-    id: number;
+    id?: number;
     nombre: string;
     apellido: string;
     url_foto: string;

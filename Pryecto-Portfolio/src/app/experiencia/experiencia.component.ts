@@ -3,6 +3,7 @@ import { DataServiceService } from '../data-service.service';
 import { Interfaz_experiencia } from '../interfaces/Interfaz_experiencia';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
+import { LoginuserserviceService } from '../loginuserservice.service';
 
 @Component({
   selector: 'app-experiencia',
@@ -33,11 +34,13 @@ export class ExperienciaComponent implements OnInit {
     fecha_final: ''
   }
   
+  isLoggedG: boolean = false;
 
-  constructor( private dataService: DataServiceService, private router: Router) { }
+  constructor( private dataService: DataServiceService, private router: Router, private loginService: LoginuserserviceService) { }
 
   ngOnInit(): void {
     this.dataService.getexperiencia().subscribe( data => this.dataExperiencia = data)
+    this.isLoggedG = this.loginService.getVariable();
   }
 
   openEditForm(item:Interfaz_experiencia ) {
@@ -53,6 +56,7 @@ export class ExperienciaComponent implements OnInit {
   }
 
   cancelEdition() {
+    this.dataService.getexperiencia().subscribe( data => this.dataExperiencia = data);
     this.editando = false;
   }
 

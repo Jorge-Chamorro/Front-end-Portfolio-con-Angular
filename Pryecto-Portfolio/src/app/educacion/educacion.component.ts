@@ -3,6 +3,7 @@ import { DataServiceService } from '../data-service.service';
 import { Interfaz_educacion } from '../interfaces/Interfaz_educacion';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
+import { LoginuserserviceService } from '../loginuserservice.service';
 
 @Component({
   selector: 'app-educacion',
@@ -37,21 +38,24 @@ export class EducacionComponent implements OnInit {
     descripcion: ''
     }
 
+  isLoggedG: boolean = false;
+
     
 
 
-  constructor( private dataService: DataServiceService, private router: Router) {   }
+  constructor( private dataService: DataServiceService, private router: Router, private loginService: LoginuserserviceService) {   }
 
   ngOnInit(): void {
 
     this.dataService.geteducacion().subscribe(data => this.dataEducacion = data);
+    this.isLoggedG = this.loginService.getVariable();
     
   }
 
 
   openEditForm(item:Interfaz_educacion) {
     this.itemAModificar = item;
-    this.editando = true;
+        this.editando = true;
   }
 
   guardarEducacion() {
@@ -61,6 +65,7 @@ export class EducacionComponent implements OnInit {
     }
 
   cancelEdition() {
+    this.dataService.geteducacion().subscribe(data => this.dataEducacion = data);
     this.editando = false;
   }
 

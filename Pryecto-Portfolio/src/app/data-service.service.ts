@@ -46,7 +46,7 @@ export class DataServiceService {
   }
 
   getproyectos(): Observable<Interfaz_proyectos[]> {
-    return this.http.get<Interfaz_proyectos[]> (this.apiUrlVieja + 'proyectos')
+    return this.http.get<Interfaz_proyectos[]> (this.apiUrl + 'proyectos/get')
   }  
 
   guardarPersona(persona: Interfaz_persona): Observable<Interfaz_persona> {
@@ -68,8 +68,8 @@ export class DataServiceService {
     return this.http.put<Interfaz_hyss> (this.apiUrl + 'hyss/put/' + skill.id, skill);
    }
 
-  guardarProyecto(proyecto: Interfaz_proyectos, idProyecto:number): Observable<Interfaz_proyectos> {
-    return this.http.put<Interfaz_proyectos> (this.apiUrlVieja + 'proyectos/' + idProyecto, proyecto);
+  guardarProyecto(proyecto: Interfaz_proyectos): Observable<Interfaz_proyectos> {
+    return this.http.put<Interfaz_proyectos> (this.apiUrl + 'proyectos/put/' + proyecto.id, proyecto);
    }
 
    
@@ -87,7 +87,7 @@ export class DataServiceService {
    }
 
    agregarProyecto(proyecto: Interfaz_proyectos): Observable<Interfaz_proyectos> {
-    return this.http.post<Interfaz_proyectos>(this.apiUrlVieja + 'proyectos/', proyecto); 
+    return this.http.post<Interfaz_proyectos>(this.apiUrl + 'proyectos/post', proyecto); 
    }
 
    deleteEducacion(educacion: Interfaz_educacion): Observable<Interfaz_educacion>{
@@ -102,5 +102,8 @@ export class DataServiceService {
     return this.http.delete<Interfaz_hyss>(this.apiUrl + 'hyss/delete/'+ skill.id)
    }
 
+   deleteProyecto(proyecto: Interfaz_proyectos): Observable<Interfaz_proyectos>{
+    return this.http.delete<Interfaz_proyectos>(this.apiUrl + 'proyectos/delete/'+ proyecto.id)
+   }
 
 }
