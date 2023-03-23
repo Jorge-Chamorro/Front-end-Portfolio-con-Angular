@@ -3,7 +3,7 @@
     <div class="contenedorCards " >
      <div class="encabezadoex m-4 d-flex flex-row ">
        <h2>Educación</h2>
-       <i class="fa fa-circle-plus mx-3 pt-1" style="font-size: 1.5rem; cursor: pointer;" (click)="openNewForm()"></i>
+       <i *ngIf="isLoggedG" class="fa fa-circle-plus mx-3 pt-1" style="font-size: 1.5rem; cursor: pointer;" (click)="openNewForm()"></i>
      </div>
     <div class="container" *ngFor = "let item of dataEducacion">
      <div class="card text-center m-4" style="max-width:1000px">
