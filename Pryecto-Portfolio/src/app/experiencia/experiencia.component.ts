@@ -39,8 +39,9 @@ export class ExperienciaComponent implements OnInit {
   constructor( private dataService: DataServiceService, private router: Router, private loginService: LoginuserserviceService) { }
 
   ngOnInit(): void {
-    this.dataService.getexperiencia().subscribe( data => this.dataExperiencia = data)
-    this.isLoggedG = this.loginService.getVariable();
+    this.dataService.getexperiencia().subscribe( data => this.dataExperiencia = data);
+    this.loginService.getVariable().subscribe(variable => { this.isLoggedG = variable });
+    // this.isLoggedG = this.loginService.getVariable();
   }
 
   openEditForm(item:Interfaz_experiencia ) {

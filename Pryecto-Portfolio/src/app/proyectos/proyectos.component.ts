@@ -45,7 +45,8 @@ export class ProyectosComponent implements OnInit {
   ngOnInit(): void {
 
     this.dataService.getproyectos().subscribe( data => this.dataUser = data);
-    this.isLoggedG = this.loginService.getVariable();
+    this.loginService.getVariable().subscribe(variable => { this.isLoggedG = variable });
+    // this.isLoggedG = this.loginService.getVariable();
   }
 
   openEditForm(item:Interfaz_proyectos) {

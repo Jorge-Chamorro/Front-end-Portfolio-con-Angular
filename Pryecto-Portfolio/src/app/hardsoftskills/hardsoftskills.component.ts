@@ -40,7 +40,8 @@ export class HardsoftskillsComponent implements OnInit {
 
   ngOnInit(): void {
     this.dataService.gethyss().subscribe(data => this.dataSkill = data);
-    this.isLoggedG = this.loginService.getVariable();
+    this.loginService.getVariable().subscribe(variable => { this.isLoggedG = variable });
+    // this.isLoggedG = this.loginService.getVariable();
   }
 
 

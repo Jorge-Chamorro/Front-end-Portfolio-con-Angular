@@ -24,7 +24,8 @@ export class SobreMiComponent implements OnInit {
   isLogged:boolean = false;
 
   constructor( private dataService: DataServiceService, private loginuserservice: LoginuserserviceService) {
-    this.isLogged = this.loginuserservice.getVariable();
+    this.loginuserservice.getVariable().subscribe(variable => { this.isLogged = variable });
+    // this.isLogged = this.loginuserservice.getVariable();
    }
 
   // textoSobremi : string = "Me encanta escribir codigo, diseñar y aprender constantemente sobre este mundo maraviloso de la programación. Para mi mas que un trabajo es un pasatiempo que disfruto"

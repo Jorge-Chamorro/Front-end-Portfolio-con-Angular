@@ -47,8 +47,8 @@ export class EducacionComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.dataService.geteducacion().subscribe(data => this.dataEducacion = data);
-    this.isLoggedG = this.loginService.getVariable();
+   this.dataService.geteducacion().subscribe(data => this.dataEducacion = data);
+   this.loginService.getVariable().subscribe(variable => { this.isLoggedG = variable });
     
   }
 
@@ -56,6 +56,7 @@ export class EducacionComponent implements OnInit {
   openEditForm(item:Interfaz_educacion) {
     this.itemAModificar = item;
         this.editando = true;
+        console.log("La variable isLoggedG en el componente educacion es:" + this.isLoggedG);
   }
 
   guardarEducacion() {
