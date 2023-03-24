@@ -8,20 +8,23 @@
       <i *ngIf="isLoggedG" class="fa fa-circle-plus mx-3 pt-1" style="font-size: 1.5rem; cursor: pointer;" (click)="openNewForm()"></i>
     </div>
  
- <div class="contenedorCards mx-auto" >
-  <ngb-carousel style="height: 400px;">
+
+  <ngb-carousel >
     <ng-template ngbSlide *ngFor="let item of dataUser">
       <!-- <i class="fa fa-circle-plus mx-3 pt-1 position-absolute top-0 start-0 m-3" style="z-index:50000000; font-size: 1.5rem; cursor: pointer;" (click)="openNewForm()"></i> -->
+      
       <i *ngIf="isLoggedG" class="fa fa-pencil position-absolute top-0 end-0 mx-5 mt-3" style="z-index:50000000; font-size: 1.5rem; cursor: pointer;" (click)="openEditForm(item)" aria-hidden="true"></i>
       <i *ngIf="isLoggedG" class="fa fa-circle-minus position-absolute top-0 start-0 m-2" style="z-index:50000000; color: red; font-size: 1.5rem; cursor: pointer;" (click)="deleteProyecto(item)"></i>
+      <a href="{{ item.url_direccion_proyecto}}" target="blank">
       <img class="d-none d-sm-block" [src]="item.url_foto_proyecto"  style="height: 400px; width: 100%"/>
+      </a>
       <div class="carousel-caption">
         <h3>{{ item.nombre_proyecto }}</h3>
         <p>{{ item.descripcion_proyecto }}</p>
       </div>
     </ng-template>
   </ngb-carousel>
-</div>
+
     
   
    </div>

@@ -21,7 +21,7 @@ const httpOptions = {
 })
 export class DataServiceService {
 
-  private apiUrl = 'http://localhost:8080/';
+  private apiUrl = 'https://portfoliogeo.onrender.com/';
 
   private apiUrlVieja = 'http://localhost:3000/'
   

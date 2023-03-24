@@ -1,5 +1,5 @@
 export interface Interfaz_educacion {
-    id: number;
+    id?: number;
     institucion: string;
     titulo: string;
     fecha_inicio: string;

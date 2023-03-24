@@ -20,7 +20,7 @@ export class EducacionComponent implements OnInit {
   editando = false;
   agregando = false;
   itemAModificar:Interfaz_educacion = {
-    id: 1,
+    
     institucion: '',
     titulo: '',
     fecha_inicio: '',
@@ -29,7 +29,7 @@ export class EducacionComponent implements OnInit {
     descripcion: ''
     }
   educacionNueva:Interfaz_educacion = {
-    id: 1,
+    
     institucion: '',
     titulo: '',
     fecha_inicio: '',
