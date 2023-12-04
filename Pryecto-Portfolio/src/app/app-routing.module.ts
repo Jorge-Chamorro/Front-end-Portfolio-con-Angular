@@ -15,11 +15,11 @@ const routes: Routes =
   [
     { path: '', component: BannerComponent },
     { path: 'route2', component: SobreMiComponent },
-    { path: 'route3', component: EducacionComponent },
-    { path: 'route4', component: ExperienciaComponent }, 
-    { path: 'route5', component: HardsoftskillsComponent },
-    { path: 'route6', component: ProyectosComponent },
-    { path: 'login',  component: LoginComponent}
+ //   { path: 'route3', component: EducacionComponent },
+ //   { path: 'route4', component: ExperienciaComponent }, 
+ //   { path: 'route5', component: HardsoftskillsComponent },
+ //   { path: 'route6', component: ProyectosComponent },
+  //  { path: 'login',  component: LoginComponent}
   ]
 
 
