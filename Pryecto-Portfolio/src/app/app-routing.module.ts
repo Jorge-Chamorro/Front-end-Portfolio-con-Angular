@@ -19,7 +19,7 @@ const routes: Routes =
  //   { path: 'route4', component: ExperienciaComponent }, 
  //   { path: 'route5', component: HardsoftskillsComponent },
  //   { path: 'route6', component: ProyectosComponent },
-  //  { path: 'login',  component: LoginComponent}
+    { path: 'login',  component: LoginComponent}
   ]
 
 

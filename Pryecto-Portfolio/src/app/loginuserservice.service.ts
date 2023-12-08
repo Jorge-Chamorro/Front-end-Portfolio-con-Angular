@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable, observable, of, Subject } from 'rxjs';
+import { BehaviorSubject, Observable} from 'rxjs';
 import { User } from './user';
 
 @Injectable({
@@ -10,8 +10,8 @@ import { User } from './user';
 export class LoginuserserviceService {
 
   private url="https://portfolio-rode.onrender.com/user/login";
-  private isLoggedG:boolean = false;
-  private isLoggedGSubject = new Subject<boolean>();
+  
+  private isLoggedGSubject: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false); // behaviorSubject es un observable pero que tiene un valor inicial y que puede emitir valores, por se subject
 
 
   constructor(private httpClient: HttpClient) { }
@@ -21,24 +21,19 @@ export class LoginuserserviceService {
     return this.httpClient.post(`${this.url}`, user);
   }
 
-
-
-  setVariable(valor:boolean){
+  setVariable(valor:boolean): void {
     console.log("set variable funciona");
-    this.isLoggedG = valor;
-    this.isLoggedGSubject.next(this.isLoggedG);
-    console.log("el valor de isLoggeG es:" + this.isLoggedG);
-
-
-
-
+    
+    this.isLoggedGSubject.next(valor);
+    //console.log("el valor de isLoggeG es:" + this.isLoggedG);
     // console.log("set variable funciona");
     // this.isLoggedG = valor;
     // console.log("el valor de isLoggeG es:" + this.isLoggedG);
   }
 
   getVariable():Observable<boolean> {
-    return of(this.isLoggedG);
+    
+    return this.isLoggedGSubject;
   }
 
   get isLoggedG$(): Observable<boolean> {

@@ -4,6 +4,7 @@ import { Interfaz_educacion } from '../interfaces/Interfaz_educacion';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { LoginuserserviceService } from '../loginuserservice.service';
+import { BehaviorSubject, Observable, of } from 'rxjs';
 
 @Component({
   selector: 'app-educacion',
@@ -39,7 +40,7 @@ export class EducacionComponent implements OnInit {
     }
 
   isLoggedG: boolean = false;
-
+  
     
 
 
@@ -49,10 +50,14 @@ export class EducacionComponent implements OnInit {
 
    this.dataService.geteducacion().subscribe(data => this.dataEducacion = data);
    this.loginService.getVariable().subscribe(variable => { this.isLoggedG = variable });
+  
+   //this.isLoggedG = this.loginService.getVariable();  
     
   }
 
 
+
+  
   openEditForm(item:Interfaz_educacion) {
     this.itemAModificar = item;
         this.editando = true;
