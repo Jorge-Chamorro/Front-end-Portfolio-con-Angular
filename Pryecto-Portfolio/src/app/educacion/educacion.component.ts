@@ -92,7 +92,8 @@ export class EducacionComponent implements OnInit {
          console.log("array en la base de datos:" + JSON.stringify(this.dataEducacion));
          this.formulario.reset();
          this.agregando = false;
-         this.router.navigate(['route3']);
+         //this.router.navigate(['route3']);
+         window.location.href = "#educacion";
              }
        )
   }

@@ -77,7 +77,8 @@ export class HardsoftskillsComponent implements OnInit {
          this.dataService.gethyss().subscribe(data => this.dataSkill = data);
          this.formulario.reset();
          this.agregando = false;
-         this.router.navigate(['route5']);
+         //this.router.navigate(['route5']); Usando Rutas redirijo o actualizo
+         window.location.href = "#h&sskills"; // Usando solo el href normal redirijo o actualizo
              }
       )
   }

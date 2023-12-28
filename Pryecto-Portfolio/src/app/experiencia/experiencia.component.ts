@@ -78,7 +78,8 @@ export class ExperienciaComponent implements OnInit {
          
          this.formulario.reset();
          this.agregando = false;
-         this.router.navigate(['route4']);
+         //this.router.navigate(['route4']);
+         window.location.href = "#experiencia";
              }
       )
   }

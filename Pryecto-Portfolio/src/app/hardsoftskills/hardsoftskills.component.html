@@ -1,16 +1,13 @@
- <section *ngIf="!editando && !agregando" class="container d-flex justify-content-between" style = " overflow-y: scroll; scrollbar-width: none; height: 85vh; width: 85%; margin: auto;" class="banner">  
-   <div  >
-     <div class="encabezadoex m-4 d-flex flex-row">
+ <section *ngIf="!editando && !agregando"  class="banner">  
+   
+     <div class="encabezadoex m-4 d-flex flex-row justify-content-center">
       <h2 class="mb-5">Hard & Soft Skills</h2>
       <i *ngIf="isLoggedG" class="fa fa-circle-plus mx-3 pt-1" style="font-size: 1.5rem; cursor: pointer;" (click)="openNewForm()"></i>
-   </div>
+     </div>
 
-    <div *ngFor = "let item of dataSkill" class="d-inline-block">
+    <div *ngFor = "let item of dataSkill"  class="d-inline-block justify-content-center">
     <!-- <div  class="border border-danger m-2 " > -->
 
-    <div class="mx-4">
-     
-     
       <!-- [percent]="item.porcentaje" -->
     
     
@@ -40,9 +37,9 @@
     <span *ngIf="isLoggedG" class="top-100 end-100 ">
      <i class="fa fa-circle-minus top-0 start-100 m-2 d-inline-block" style="color: red; font-size: 1.5rem; cursor: pointer;" (click)="deleteSkill(item)"></i>
     </span>
+    
     </div>
-    </div>
-   </div>
+   
 
 </section>
 
